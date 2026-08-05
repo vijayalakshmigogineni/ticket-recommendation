@@ -1,0 +1,5937 @@
+{
+  "customers": [
+    "cust_1",
+    "cust_2",
+    "cust_3",
+    "cust_4",
+    "cust_5",
+    "cust_6",
+    "cust_7",
+    "cust_8",
+    "cust_9",
+    "cust_10",
+    "cust_11",
+    "cust_12",
+    "cust_13",
+    "cust_14",
+    "cust_15",
+    "cust_16",
+    "cust_17",
+    "cust_18",
+    "cust_19",
+    "cust_20",
+    "cust_21",
+    "cust_22",
+    "cust_23",
+    "cust_24",
+    "cust_25",
+    "cust_26",
+    "cust_27",
+    "cust_28",
+    "cust_29",
+    "cust_30",
+    "cust_31",
+    "cust_32",
+    "cust_33",
+    "cust_34",
+    "cust_35",
+    "cust_36",
+    "cust_37",
+    "cust_38",
+    "cust_39",
+    "cust_40"
+  ],
+  "tickets": [
+    {
+      "temp_id": "tkt_1_1",
+      "customer_temp_id": "cust_1",
+      "category": "accounts_receivable",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_1_2",
+      "customer_temp_id": "cust_1",
+      "category": "eligibility",
+      "status": "IN_PROGRESS",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_1_3",
+      "customer_temp_id": "cust_1",
+      "category": "claims",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_1_4",
+      "customer_temp_id": "cust_1",
+      "category": "charge_entry",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_1_5",
+      "customer_temp_id": "cust_1",
+      "category": "accounts_receivable",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_1_6",
+      "customer_temp_id": "cust_1",
+      "category": "payment_posting",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_2_1",
+      "customer_temp_id": "cust_2",
+      "category": "prior_authorization",
+      "status": "RESOLVED",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_2_2",
+      "customer_temp_id": "cust_2",
+      "category": "accounts_receivable",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_2_3",
+      "customer_temp_id": "cust_2",
+      "category": "prior_authorization",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_3_1",
+      "customer_temp_id": "cust_3",
+      "category": "eligibility",
+      "status": "IN_PROGRESS",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_3_2",
+      "customer_temp_id": "cust_3",
+      "category": "charge_entry",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_3_3",
+      "customer_temp_id": "cust_3",
+      "category": "claims",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_3_4",
+      "customer_temp_id": "cust_3",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_4_1",
+      "customer_temp_id": "cust_4",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_4_2",
+      "customer_temp_id": "cust_4",
+      "category": "payment_posting",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_4_3",
+      "customer_temp_id": "cust_4",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_4_4",
+      "customer_temp_id": "cust_4",
+      "category": "prior_authorization",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_4_5",
+      "customer_temp_id": "cust_4",
+      "category": "payment_posting",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_4_6",
+      "customer_temp_id": "cust_4",
+      "category": "eligibility",
+      "status": "CLOSED",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_5_1",
+      "customer_temp_id": "cust_5",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_5_2",
+      "customer_temp_id": "cust_5",
+      "category": "accounts_receivable",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_5_3",
+      "customer_temp_id": "cust_5",
+      "category": "charge_entry",
+      "status": "CLOSED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_6_1",
+      "customer_temp_id": "cust_6",
+      "category": "payment_posting",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_6_2",
+      "customer_temp_id": "cust_6",
+      "category": "claims",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_6_3",
+      "customer_temp_id": "cust_6",
+      "category": "eligibility",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_6_4",
+      "customer_temp_id": "cust_6",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_6_5",
+      "customer_temp_id": "cust_6",
+      "category": "claims",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_7_1",
+      "customer_temp_id": "cust_7",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_7_2"
+    },
+    {
+      "temp_id": "tkt_7_2",
+      "customer_temp_id": "cust_7",
+      "category": "claims",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_7_1"
+    },
+    {
+      "temp_id": "tkt_7_3",
+      "customer_temp_id": "cust_7",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_7_4",
+      "customer_temp_id": "cust_7",
+      "category": "claims",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_7_5",
+      "customer_temp_id": "cust_7",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_8_1",
+      "customer_temp_id": "cust_8",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_8_2",
+      "customer_temp_id": "cust_8",
+      "category": "charge_entry",
+      "status": "PENDING",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_8_3",
+      "customer_temp_id": "cust_8",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_8_4",
+      "customer_temp_id": "cust_8",
+      "category": "payment_posting",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_9_1",
+      "customer_temp_id": "cust_9",
+      "category": "payment_posting",
+      "status": "IN_PROGRESS",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_9_2",
+      "customer_temp_id": "cust_9",
+      "category": "accounts_receivable",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_9_3",
+      "customer_temp_id": "cust_9",
+      "category": "eligibility",
+      "status": "OPEN",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_10_1",
+      "customer_temp_id": "cust_10",
+      "category": "prior_authorization",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_10_2"
+    },
+    {
+      "temp_id": "tkt_10_2",
+      "customer_temp_id": "cust_10",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 2,
+      "disambiguation_sibling": "tkt_10_1"
+    },
+    {
+      "temp_id": "tkt_10_3",
+      "customer_temp_id": "cust_10",
+      "category": "eligibility",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_10_4",
+      "customer_temp_id": "cust_10",
+      "category": "charge_entry",
+      "status": "OPEN",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_10_5",
+      "customer_temp_id": "cust_10",
+      "category": "charge_entry",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_11_1",
+      "customer_temp_id": "cust_11",
+      "category": "claims",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_11_2",
+      "customer_temp_id": "cust_11",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_11_3",
+      "customer_temp_id": "cust_11",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_11_4",
+      "customer_temp_id": "cust_11",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_11_5",
+      "customer_temp_id": "cust_11",
+      "category": "payment_posting",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_11_6",
+      "customer_temp_id": "cust_11",
+      "category": "accounts_receivable",
+      "status": "IN_PROGRESS",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_12_1",
+      "customer_temp_id": "cust_12",
+      "category": "prior_authorization",
+      "status": "RESOLVED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_12_2",
+      "customer_temp_id": "cust_12",
+      "category": "eligibility",
+      "status": "OPEN",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_12_3",
+      "customer_temp_id": "cust_12",
+      "category": "eligibility",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_12_4",
+      "customer_temp_id": "cust_12",
+      "category": "eligibility",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_13_1",
+      "customer_temp_id": "cust_13",
+      "category": "eligibility",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_13_2",
+      "customer_temp_id": "cust_13",
+      "category": "payment_posting",
+      "status": "RESOLVED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_13_3",
+      "customer_temp_id": "cust_13",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_13_4",
+      "customer_temp_id": "cust_13",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_1",
+      "customer_temp_id": "cust_14",
+      "category": "payment_posting",
+      "status": "RESOLVED",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_2",
+      "customer_temp_id": "cust_14",
+      "category": "prior_authorization",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_3",
+      "customer_temp_id": "cust_14",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_4",
+      "customer_temp_id": "cust_14",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_5",
+      "customer_temp_id": "cust_14",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_6",
+      "customer_temp_id": "cust_14",
+      "category": "prior_authorization",
+      "status": "OPEN",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_14_7",
+      "customer_temp_id": "cust_14",
+      "category": "claims",
+      "status": "CLOSED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_15_1",
+      "customer_temp_id": "cust_15",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_15_2",
+      "customer_temp_id": "cust_15",
+      "category": "payment_posting",
+      "status": "CLOSED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_15_3",
+      "customer_temp_id": "cust_15",
+      "category": "claims",
+      "status": "OPEN",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_15_4",
+      "customer_temp_id": "cust_15",
+      "category": "charge_entry",
+      "status": "OPEN",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_16_1",
+      "customer_temp_id": "cust_16",
+      "category": "charge_entry",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_16_2",
+      "customer_temp_id": "cust_16",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_16_3",
+      "customer_temp_id": "cust_16",
+      "category": "claims",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_16_4",
+      "customer_temp_id": "cust_16",
+      "category": "charge_entry",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_1",
+      "customer_temp_id": "cust_17",
+      "category": "charge_entry",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_2",
+      "customer_temp_id": "cust_17",
+      "category": "payment_posting",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_3",
+      "customer_temp_id": "cust_17",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_4",
+      "customer_temp_id": "cust_17",
+      "category": "prior_authorization",
+      "status": "OPEN",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_5",
+      "customer_temp_id": "cust_17",
+      "category": "payment_posting",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_6",
+      "customer_temp_id": "cust_17",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_7",
+      "customer_temp_id": "cust_17",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_8",
+      "customer_temp_id": "cust_17",
+      "category": "prior_authorization",
+      "status": "IN_PROGRESS",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_17_9",
+      "customer_temp_id": "cust_17",
+      "category": "charge_entry",
+      "status": "CLOSED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_18_1",
+      "customer_temp_id": "cust_18",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_18_2",
+      "customer_temp_id": "cust_18",
+      "category": "prior_authorization",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_18_3",
+      "customer_temp_id": "cust_18",
+      "category": "accounts_receivable",
+      "status": "RESOLVED",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_19_1",
+      "customer_temp_id": "cust_19",
+      "category": "payment_posting",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_19_2",
+      "customer_temp_id": "cust_19",
+      "category": "eligibility",
+      "status": "PENDING",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_19_3",
+      "customer_temp_id": "cust_19",
+      "category": "eligibility",
+      "status": "IN_PROGRESS",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_19_4",
+      "customer_temp_id": "cust_19",
+      "category": "prior_authorization",
+      "status": "OPEN",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_19_5",
+      "customer_temp_id": "cust_19",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_19_6",
+      "customer_temp_id": "cust_19",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_20_1",
+      "customer_temp_id": "cust_20",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_20_2",
+      "customer_temp_id": "cust_20",
+      "category": "eligibility",
+      "status": "RESOLVED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_21_1",
+      "customer_temp_id": "cust_21",
+      "category": "claims",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 4,
+      "disambiguation_sibling": "tkt_21_2"
+    },
+    {
+      "temp_id": "tkt_21_2",
+      "customer_temp_id": "cust_21",
+      "category": "claims",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_21_1"
+    },
+    {
+      "temp_id": "tkt_21_3",
+      "customer_temp_id": "cust_21",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_21_4",
+      "customer_temp_id": "cust_21",
+      "category": "payment_posting",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_1",
+      "customer_temp_id": "cust_22",
+      "category": "prior_authorization",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_2",
+      "customer_temp_id": "cust_22",
+      "category": "claims",
+      "status": "CLOSED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_3",
+      "customer_temp_id": "cust_22",
+      "category": "claims",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_4",
+      "customer_temp_id": "cust_22",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_5",
+      "customer_temp_id": "cust_22",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_6",
+      "customer_temp_id": "cust_22",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_22_7",
+      "customer_temp_id": "cust_22",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_1",
+      "customer_temp_id": "cust_23",
+      "category": "charge_entry",
+      "status": "OPEN",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_2",
+      "customer_temp_id": "cust_23",
+      "category": "claims",
+      "status": "OPEN",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_3",
+      "customer_temp_id": "cust_23",
+      "category": "accounts_receivable",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_4",
+      "customer_temp_id": "cust_23",
+      "category": "eligibility",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_5",
+      "customer_temp_id": "cust_23",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_6",
+      "customer_temp_id": "cust_23",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_23_7",
+      "customer_temp_id": "cust_23",
+      "category": "eligibility",
+      "status": "CLOSED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_24_1",
+      "customer_temp_id": "cust_24",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_24_2",
+      "customer_temp_id": "cust_24",
+      "category": "prior_authorization",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_24_3",
+      "customer_temp_id": "cust_24",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 8,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_24_4",
+      "customer_temp_id": "cust_24",
+      "category": "payment_posting",
+      "status": "RESOLVED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_25_1",
+      "customer_temp_id": "cust_25",
+      "category": "charge_entry",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_25_2",
+      "customer_temp_id": "cust_25",
+      "category": "prior_authorization",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_25_3",
+      "customer_temp_id": "cust_25",
+      "category": "payment_posting",
+      "status": "RESOLVED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_25_4",
+      "customer_temp_id": "cust_25",
+      "category": "payment_posting",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_26_1",
+      "customer_temp_id": "cust_26",
+      "category": "accounts_receivable",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": "tkt_26_2"
+    },
+    {
+      "temp_id": "tkt_26_2",
+      "customer_temp_id": "cust_26",
+      "category": "accounts_receivable",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_26_1"
+    },
+    {
+      "temp_id": "tkt_26_3",
+      "customer_temp_id": "cust_26",
+      "category": "charge_entry",
+      "status": "CLOSED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_26_4",
+      "customer_temp_id": "cust_26",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_26_5",
+      "customer_temp_id": "cust_26",
+      "category": "charge_entry",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_27_1",
+      "customer_temp_id": "cust_27",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_27_2"
+    },
+    {
+      "temp_id": "tkt_27_2",
+      "customer_temp_id": "cust_27",
+      "category": "eligibility",
+      "status": "RESOLVED",
+      "message_count": 7,
+      "disambiguation_sibling": "tkt_27_1"
+    },
+    {
+      "temp_id": "tkt_27_3",
+      "customer_temp_id": "cust_27",
+      "category": "eligibility",
+      "status": "RESOLVED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_28_1",
+      "customer_temp_id": "cust_28",
+      "category": "claims",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": "tkt_28_2"
+    },
+    {
+      "temp_id": "tkt_28_2",
+      "customer_temp_id": "cust_28",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": "tkt_28_1"
+    },
+    {
+      "temp_id": "tkt_28_3",
+      "customer_temp_id": "cust_28",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_28_4",
+      "customer_temp_id": "cust_28",
+      "category": "eligibility",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_28_5",
+      "customer_temp_id": "cust_28",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_28_6",
+      "customer_temp_id": "cust_28",
+      "category": "payment_posting",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_1",
+      "customer_temp_id": "cust_29",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_2",
+      "customer_temp_id": "cust_29",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_3",
+      "customer_temp_id": "cust_29",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_4",
+      "customer_temp_id": "cust_29",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_5",
+      "customer_temp_id": "cust_29",
+      "category": "eligibility",
+      "status": "OPEN",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_6",
+      "customer_temp_id": "cust_29",
+      "category": "accounts_receivable",
+      "status": "RESOLVED",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_7",
+      "customer_temp_id": "cust_29",
+      "category": "accounts_receivable",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_29_8",
+      "customer_temp_id": "cust_29",
+      "category": "prior_authorization",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_30_1",
+      "customer_temp_id": "cust_30",
+      "category": "charge_entry",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_30_2",
+      "customer_temp_id": "cust_30",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_30_3",
+      "customer_temp_id": "cust_30",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_31_1",
+      "customer_temp_id": "cust_31",
+      "category": "claims",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_31_2",
+      "customer_temp_id": "cust_31",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_32_1",
+      "customer_temp_id": "cust_32",
+      "category": "prior_authorization",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": "tkt_32_2"
+    },
+    {
+      "temp_id": "tkt_32_2",
+      "customer_temp_id": "cust_32",
+      "category": "prior_authorization",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": "tkt_32_1"
+    },
+    {
+      "temp_id": "tkt_32_3",
+      "customer_temp_id": "cust_32",
+      "category": "accounts_receivable",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_32_4",
+      "customer_temp_id": "cust_32",
+      "category": "payment_posting",
+      "status": "PENDING",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_32_5",
+      "customer_temp_id": "cust_32",
+      "category": "claims",
+      "status": "RESOLVED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_33_1",
+      "customer_temp_id": "cust_33",
+      "category": "accounts_receivable",
+      "status": "CLOSED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_33_2",
+      "customer_temp_id": "cust_33",
+      "category": "charge_entry",
+      "status": "CLOSED",
+      "message_count": 9,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_33_3",
+      "customer_temp_id": "cust_33",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_33_4",
+      "customer_temp_id": "cust_33",
+      "category": "payment_posting",
+      "status": "OPEN",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_33_5",
+      "customer_temp_id": "cust_33",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_34_1",
+      "customer_temp_id": "cust_34",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 6,
+      "disambiguation_sibling": "tkt_34_2"
+    },
+    {
+      "temp_id": "tkt_34_2",
+      "customer_temp_id": "cust_34",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 8,
+      "disambiguation_sibling": "tkt_34_1"
+    },
+    {
+      "temp_id": "tkt_34_3",
+      "customer_temp_id": "cust_34",
+      "category": "accounts_receivable",
+      "status": "IN_PROGRESS",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_34_4",
+      "customer_temp_id": "cust_34",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_34_5",
+      "customer_temp_id": "cust_34",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_34_6",
+      "customer_temp_id": "cust_34",
+      "category": "payment_posting",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_34_7",
+      "customer_temp_id": "cust_34",
+      "category": "charge_entry",
+      "status": "RESOLVED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_34_8",
+      "customer_temp_id": "cust_34",
+      "category": "charge_entry",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_35_1",
+      "customer_temp_id": "cust_35",
+      "category": "charge_entry",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_35_2",
+      "customer_temp_id": "cust_35",
+      "category": "claims",
+      "status": "CLOSED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_35_3",
+      "customer_temp_id": "cust_35",
+      "category": "charge_entry",
+      "status": "IN_PROGRESS",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_35_4",
+      "customer_temp_id": "cust_35",
+      "category": "accounts_receivable",
+      "status": "RESOLVED",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_35_5",
+      "customer_temp_id": "cust_35",
+      "category": "claims",
+      "status": "PENDING",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_36_1",
+      "customer_temp_id": "cust_36",
+      "category": "eligibility",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_36_2",
+      "customer_temp_id": "cust_36",
+      "category": "payment_posting",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_36_3",
+      "customer_temp_id": "cust_36",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_36_4",
+      "customer_temp_id": "cust_36",
+      "category": "prior_authorization",
+      "status": "CLOSED",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_36_5",
+      "customer_temp_id": "cust_36",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 2,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_37_1",
+      "customer_temp_id": "cust_37",
+      "category": "prior_authorization",
+      "status": "IN_PROGRESS",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_37_2",
+      "customer_temp_id": "cust_37",
+      "category": "accounts_receivable",
+      "status": "PENDING",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_37_3",
+      "customer_temp_id": "cust_37",
+      "category": "claims",
+      "status": "IN_PROGRESS",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_37_4",
+      "customer_temp_id": "cust_37",
+      "category": "charge_entry",
+      "status": "CLOSED",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_37_5",
+      "customer_temp_id": "cust_37",
+      "category": "prior_authorization",
+      "status": "OPEN",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_38_1",
+      "customer_temp_id": "cust_38",
+      "category": "charge_entry",
+      "status": "RESOLVED",
+      "message_count": 4,
+      "disambiguation_sibling": "tkt_38_2"
+    },
+    {
+      "temp_id": "tkt_38_2",
+      "customer_temp_id": "cust_38",
+      "category": "charge_entry",
+      "status": "RESOLVED",
+      "message_count": 9,
+      "disambiguation_sibling": "tkt_38_1"
+    },
+    {
+      "temp_id": "tkt_38_3",
+      "customer_temp_id": "cust_38",
+      "category": "charge_entry",
+      "status": "RESOLVED",
+      "message_count": 5,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_38_4",
+      "customer_temp_id": "cust_38",
+      "category": "eligibility",
+      "status": "CLOSED",
+      "message_count": 7,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_39_1",
+      "customer_temp_id": "cust_39",
+      "category": "eligibility",
+      "status": "IN_PROGRESS",
+      "message_count": 8,
+      "disambiguation_sibling": "tkt_39_2"
+    },
+    {
+      "temp_id": "tkt_39_2",
+      "customer_temp_id": "cust_39",
+      "category": "eligibility",
+      "status": "IN_PROGRESS",
+      "message_count": 4,
+      "disambiguation_sibling": "tkt_39_1"
+    },
+    {
+      "temp_id": "tkt_39_3",
+      "customer_temp_id": "cust_39",
+      "category": "claims",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 3,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_39_4",
+      "customer_temp_id": "cust_39",
+      "category": "accounts_receivable",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_39_5",
+      "customer_temp_id": "cust_39",
+      "category": "eligibility",
+      "status": "WAITING_FOR_CLIENT",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_39_6",
+      "customer_temp_id": "cust_39",
+      "category": "accounts_receivable",
+      "status": "OPEN",
+      "message_count": 4,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_40_1",
+      "customer_temp_id": "cust_40",
+      "category": "prior_authorization",
+      "status": "RESOLVED",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_40_2",
+      "customer_temp_id": "cust_40",
+      "category": "payment_posting",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    },
+    {
+      "temp_id": "tkt_40_3",
+      "customer_temp_id": "cust_40",
+      "category": "charge_entry",
+      "status": "IN_PROGRESS",
+      "message_count": 6,
+      "disambiguation_sibling": null
+    }
+  ],
+  "eval_queries": [
+    {
+      "temp_id": "q_1",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_36",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_36_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_2",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_30_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_3",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_25",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_25_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_4",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_10",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_10_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_5",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_18",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_18_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_6",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_34_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_34_1",
+        "tkt_34_2"
+      ]
+    },
+    {
+      "temp_id": "q_7",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_30_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_8",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_3",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_3_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_9",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_14",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_14_7",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_10",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_14",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_14_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_11",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_38_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_12",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_1_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_13",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_14",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_10",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_10_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_15",
+      "tier": "easy",
+      "customer_temp_id": "cust_31",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_31_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_16",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_12",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_12_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_17",
+      "tier": "easy",
+      "customer_temp_id": "cust_35",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_35_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_18",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_18",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_18_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_19",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_28_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_20",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_37",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_37_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_21",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_40",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_40_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_22",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_26_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_26_1",
+        "tkt_26_2"
+      ]
+    },
+    {
+      "temp_id": "q_23",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_16",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_16_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_24",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_16",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_16_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_25",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_26",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_26_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_26_1",
+        "tkt_26_2"
+      ]
+    },
+    {
+      "temp_id": "q_26",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_18",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_18_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_27",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_20",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_20_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_28",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_28",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_28_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_29",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_30_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_30",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_2",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_2_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_31",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_23",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_23_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_32",
+      "tier": "easy",
+      "customer_temp_id": "cust_3",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_3_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_33",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_34",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_33",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_33_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_35",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_3",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_3_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_36",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_12",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_37",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_38",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_34_8",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_39",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_7_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_7_1",
+        "tkt_7_2"
+      ]
+    },
+    {
+      "temp_id": "q_40",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_5",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_5_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_41",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_11",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_11_6",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_42",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_35",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_35_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_43",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_28_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_44",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_8",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_8_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_45",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_46",
+      "tier": "easy",
+      "customer_temp_id": "cust_4",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_4_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_47",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_5",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_5_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_48",
+      "tier": "easy",
+      "customer_temp_id": "cust_20",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_20_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_49",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_25",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_25_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_50",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_40",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_40_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_51",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_32_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_52",
+      "tier": "easy",
+      "customer_temp_id": "cust_17",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_17_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_53",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_7_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_54",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_7_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_7_1",
+        "tkt_7_2"
+      ]
+    },
+    {
+      "temp_id": "q_55",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_12",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_56",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_2",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_2_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_57",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_27",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_27_1",
+        "tkt_27_2"
+      ]
+    },
+    {
+      "temp_id": "q_58",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_30_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_59",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_39_1",
+        "tkt_39_2"
+      ]
+    },
+    {
+      "temp_id": "q_60",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_2",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_2_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_61",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_40",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_40_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_62",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_28",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_28_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_63",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_38_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_38_1",
+        "tkt_38_2"
+      ]
+    },
+    {
+      "temp_id": "q_64",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_7_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_65",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_26_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_26_1",
+        "tkt_26_2"
+      ]
+    },
+    {
+      "temp_id": "q_66",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_34_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_67",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_18",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_18_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_68",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_35",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_35_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_69",
+      "tier": "easy",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_26_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_70",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_28",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_28_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_28_1",
+        "tkt_28_2"
+      ]
+    },
+    {
+      "temp_id": "q_71",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_33",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_33_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_72",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_38_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_38_1",
+        "tkt_38_2"
+      ]
+    },
+    {
+      "temp_id": "q_73",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_19",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_74",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_18",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_18_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_75",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_11",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_11_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_76",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_5",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_5_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_77",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_15_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_78",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_19",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_19_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_79",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_27",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_27_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_80",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_81",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_32",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_32_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_32_1",
+        "tkt_32_2"
+      ]
+    },
+    {
+      "temp_id": "q_82",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_83",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_34_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_84",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_33",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_33_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_85",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_3",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_3_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_86",
+      "tier": "easy",
+      "customer_temp_id": "cust_29",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_29_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_87",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_11",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_11_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_88",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_11",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_11_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_89",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_39",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_90",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_91",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_6",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_6_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_92",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_40",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_40_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_93",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_17",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_94",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_10",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_10_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_95",
+      "tier": "easy",
+      "customer_temp_id": "cust_36",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_36_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_96",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_7_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_97",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_13",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_13_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_98",
+      "tier": "easy",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_7_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_99",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_1_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_100",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_32",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_101",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_39_1",
+        "tkt_39_2"
+      ]
+    },
+    {
+      "temp_id": "q_102",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_15_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_103",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_28",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_28_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_28_1",
+        "tkt_28_2"
+      ]
+    },
+    {
+      "temp_id": "q_104",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_33",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_33_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_105",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_18",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_18_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_106",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_10",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_10_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_10_1",
+        "tkt_10_2"
+      ]
+    },
+    {
+      "temp_id": "q_107",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_108",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_33",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_33_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_109",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_32",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_32_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_32_1",
+        "tkt_32_2"
+      ]
+    },
+    {
+      "temp_id": "q_110",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_111",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_39_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_39_1",
+        "tkt_39_2"
+      ]
+    },
+    {
+      "temp_id": "q_112",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_12",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_113",
+      "tier": "easy",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_114",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_30",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_30_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_115",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_35",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_35_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_116",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_7_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_7_1",
+        "tkt_7_2"
+      ]
+    },
+    {
+      "temp_id": "q_117",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_2",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_2_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_118",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_9",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_119",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_2",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_2_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_120",
+      "tier": "easy",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_121",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_31",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_31_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_122",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_9",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_123",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_15_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_124",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_1",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_1_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_125",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_8",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_126",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_39_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_127",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_38_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_38_1",
+        "tkt_38_2"
+      ]
+    },
+    {
+      "temp_id": "q_128",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_129",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_4",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_4_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_130",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_131",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_14_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_132",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_36",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_36_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_133",
+      "tier": "easy",
+      "customer_temp_id": "cust_40",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_40_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_134",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_19_6",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_135",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_23",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_23_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_136",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_30_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_137",
+      "tier": "easy",
+      "customer_temp_id": "cust_26",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_26_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_138",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_26_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_139",
+      "tier": "easy",
+      "customer_temp_id": "cust_35",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_35_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_140",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_32",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_32_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_141",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_32_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_142",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_2",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_2_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_143",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_24",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_24_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_144",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_15_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_145",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_17",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_17_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_146",
+      "tier": "easy",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_34_8",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_147",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_148",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_32_1",
+        "tkt_32_2"
+      ]
+    },
+    {
+      "temp_id": "q_149",
+      "tier": "easy",
+      "customer_temp_id": "cust_24",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_24_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_150",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_1",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_1_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_151",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_152",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_10",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_10_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_10_1",
+        "tkt_10_2"
+      ]
+    },
+    {
+      "temp_id": "q_153",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_154",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_14_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_155",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_29",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_29_6",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_156",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_36",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_36_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_157",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_1_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_158",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_21_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_159",
+      "tier": "easy",
+      "customer_temp_id": "cust_18",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_18_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_160",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_35",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_35_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_161",
+      "tier": "easy",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_162",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_1_6",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_163",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_36",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_36_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_164",
+      "tier": "easy",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_9_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_165",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_166",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_32_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_32_1",
+        "tkt_32_2"
+      ]
+    },
+    {
+      "temp_id": "q_167",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_2",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_2_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_168",
+      "tier": "easy",
+      "customer_temp_id": "cust_29",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_29_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_169",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_34_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_34_1",
+        "tkt_34_2"
+      ]
+    },
+    {
+      "temp_id": "q_170",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_11",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_11_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_171",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_27_1",
+        "tkt_27_2"
+      ]
+    },
+    {
+      "temp_id": "q_172",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_27",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_173",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_39_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_39_1",
+        "tkt_39_2"
+      ]
+    },
+    {
+      "temp_id": "q_174",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_2",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_2_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_175",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_25",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_25_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_176",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_6",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_6_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_177",
+      "tier": "easy",
+      "customer_temp_id": "cust_16",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_16_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_178",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_26_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_179",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_14_7",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_180",
+      "tier": "easy",
+      "customer_temp_id": "cust_29",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_29_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_181",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_33",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_33_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_182",
+      "tier": "easy",
+      "customer_temp_id": "cust_20",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_20_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_183",
+      "tier": "easy",
+      "customer_temp_id": "cust_13",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_13_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_184",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_22",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_22_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_185",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_38",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_38_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_38_1",
+        "tkt_38_2"
+      ]
+    },
+    {
+      "temp_id": "q_186",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_14_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_187",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_35",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_35_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_188",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_20",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_20_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_189",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_27_1",
+        "tkt_27_2"
+      ]
+    },
+    {
+      "temp_id": "q_190",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_1",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_1_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_191",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_28_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_28_1",
+        "tkt_28_2"
+      ]
+    },
+    {
+      "temp_id": "q_192",
+      "tier": "easy",
+      "customer_temp_id": "cust_11",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_11_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_193",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_28_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_28_1",
+        "tkt_28_2"
+      ]
+    },
+    {
+      "temp_id": "q_194",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_1_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_195",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_13",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_13_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_196",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_33",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_33_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_197",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_4",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_4_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_198",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_38_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_38_1",
+        "tkt_38_2"
+      ]
+    },
+    {
+      "temp_id": "q_199",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_40",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_40_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_200",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_18",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_18_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_201",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_10",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_10_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_10_1",
+        "tkt_10_2"
+      ]
+    },
+    {
+      "temp_id": "q_202",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_26_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_203",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_204",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_8",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_8_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_205",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_28_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_206",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_5",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_5_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_207",
+      "tier": "easy",
+      "customer_temp_id": "cust_8",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_8_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_208",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_209",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_14_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_210",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_211",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_4",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_4_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_212",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_9_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_213",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_19",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_214",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_4",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_4_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_215",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_10",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_10_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_216",
+      "tier": "easy",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_217",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_29",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_29_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_218",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_29",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_29_7",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_219",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_15_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_220",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_5",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_5_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_221",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_34_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_222",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_26_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_223",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_23",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_23_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_224",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_22",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_22_7",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_225",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_28_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_226",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_37",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_37_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_227",
+      "tier": "easy",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_228",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_23",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_23_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_229",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_31",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_31_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_230",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_14_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_231",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_12",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_12_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_232",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_10",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_10_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_233",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_17",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_234",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_16",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_16_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_235",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_17",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_17_9",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_236",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_29",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_29_8",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_237",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_6",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_6_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_238",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_23",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_23_7",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_239",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_39",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_39_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_240",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_241",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_25",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_25_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_242",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_27_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_27_1",
+        "tkt_27_2"
+      ]
+    },
+    {
+      "temp_id": "q_243",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_15",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_15_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_244",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_2",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_2_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_245",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_7_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_246",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_20",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_20_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_247",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_37",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_37_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_248",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_12",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_249",
+      "tier": "easy",
+      "customer_temp_id": "cust_10",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_10_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_250",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_12",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_12_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_251",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_252",
+      "tier": "easy",
+      "customer_temp_id": "cust_18",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_18_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_253",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_37",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_37_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_254",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_15_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_255",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_18",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_18_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_256",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_38_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_257",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_38_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_258",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_10",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_10_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_259",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_5",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_5_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_260",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_25",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_25_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_261",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_3",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_3_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_262",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_30_1",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_263",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_30_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_264",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_25",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_25_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_265",
+      "tier": "easy",
+      "customer_temp_id": "cust_32",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_266",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_36",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_36_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_267",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_17_8",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_268",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_14_6",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_269",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_14",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_14_7",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_270",
+      "tier": "easy",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_19_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_271",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_6",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_6_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_272",
+      "tier": "easy",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_15_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_273",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_10",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_10_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_274",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_275",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_13",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_13_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_276",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_3",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_3_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_277",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_39",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_278",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_14",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_14_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_279",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_280",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_7",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_7_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_281",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_38_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_282",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_25",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_25_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_283",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_34_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_284",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_21",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_21_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_21_1",
+        "tkt_21_2"
+      ]
+    },
+    {
+      "temp_id": "q_285",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_39",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_39_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_39_1",
+        "tkt_39_2"
+      ]
+    },
+    {
+      "temp_id": "q_286",
+      "tier": "easy",
+      "customer_temp_id": "cust_17",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_7",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_287",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_7",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_7_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_7_1",
+        "tkt_7_2"
+      ]
+    },
+    {
+      "temp_id": "q_288",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_19",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_289",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_34",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_34_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_290",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_38",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_38_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_291",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_13",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "heavy",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_13_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_292",
+      "tier": "easy",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_17_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_293",
+      "tier": "easy",
+      "customer_temp_id": "cust_29",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_29_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_294",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_30",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_30_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_295",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_18",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_18_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_296",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_17_9",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_297",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_1_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_298",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_2",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_2_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_299",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_300",
+      "tier": "easy",
+      "customer_temp_id": "cust_12",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_301",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_6",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_6_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_302",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_25",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_25_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_303",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_19",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_304",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_22",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_22_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_305",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_26_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_26_1",
+        "tkt_26_2"
+      ]
+    },
+    {
+      "temp_id": "q_306",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_29",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_29_7",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_307",
+      "tier": "easy",
+      "customer_temp_id": "cust_35",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_35_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_308",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_309",
+      "tier": "easy",
+      "customer_temp_id": "cust_11",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_11_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_310",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_37",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_37_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_311",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_25",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_25_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_312",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_36",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_36_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_313",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_39",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_39_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_314",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_30_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_315",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_15_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_316",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_19_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_317",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_12",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_318",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_3",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_3_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_319",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_1",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_1_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_320",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_34",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "mild",
+      "target_ticket": "tkt_34_7",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_321",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_22",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_22_6",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_322",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_32_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_32_1",
+        "tkt_32_2"
+      ]
+    },
+    {
+      "temp_id": "q_323",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_23",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_23_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_324",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_15_3",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_325",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_19",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_19_6",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_326",
+      "tier": "hard_semantic",
+      "customer_temp_id": "cust_26",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_26_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_327",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_38_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_328",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_15",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_15_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_329",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_330",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_12",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_12_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_331",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_28",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_28_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_332",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_31",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_31_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_333",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_27_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_27_1",
+        "tkt_27_2"
+      ]
+    },
+    {
+      "temp_id": "q_334",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_30",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_30_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_335",
+      "tier": "easy",
+      "customer_temp_id": "cust_30",
+      "tone": "casual",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_30_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_336",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_3",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_3_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_337",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_1",
+      "tone": "professional",
+      "length_bucket": "short",
+      "noise_level": "clean",
+      "target_ticket": "tkt_1_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_338",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_6",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_6_5",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_339",
+      "tier": "easy",
+      "customer_temp_id": "cust_5",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_5_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_340",
+      "tier": "easy",
+      "customer_temp_id": "cust_32",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "mild",
+      "target_ticket": "tkt_32_4",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_341",
+      "tier": "easy",
+      "customer_temp_id": "cust_11",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_11_5",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_342",
+      "tier": "easy",
+      "customer_temp_id": "cust_9",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_9_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_343",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_7",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_7_4",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_344",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_38",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_38_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_38_1",
+        "tkt_38_2"
+      ]
+    },
+    {
+      "temp_id": "q_345",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_32",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_32_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_32_1",
+        "tkt_32_2"
+      ]
+    },
+    {
+      "temp_id": "q_346",
+      "tier": "hard_negative",
+      "customer_temp_id": "cust_1",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": null,
+      "near_miss_ticket": "tkt_1_2",
+      "should_match": false,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_347",
+      "tier": "moderate_paraphrase",
+      "customer_temp_id": "cust_12",
+      "tone": "casual",
+      "length_bucket": "short",
+      "noise_level": "heavy",
+      "target_ticket": "tkt_12_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_348",
+      "tier": "boilerplate",
+      "customer_temp_id": "cust_17",
+      "tone": "casual",
+      "length_bucket": "medium",
+      "noise_level": "clean",
+      "target_ticket": "tkt_17_3",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": []
+    },
+    {
+      "temp_id": "q_349",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_28",
+      "tone": "professional",
+      "length_bucket": "medium",
+      "noise_level": "mild",
+      "target_ticket": "tkt_28_1",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_28_1",
+        "tkt_28_2"
+      ]
+    },
+    {
+      "temp_id": "q_350",
+      "tier": "same_customer_disambiguation",
+      "customer_temp_id": "cust_27",
+      "tone": "professional",
+      "length_bucket": "long",
+      "noise_level": "clean",
+      "target_ticket": "tkt_27_2",
+      "near_miss_ticket": null,
+      "should_match": true,
+      "candidates": [
+        "tkt_27_1",
+        "tkt_27_2"
+      ]
+    }
+  ]
+}

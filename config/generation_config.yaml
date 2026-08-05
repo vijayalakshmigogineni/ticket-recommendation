@@ -1,0 +1,29 @@
+run:
+  name: "full_scale_v1"
+  model: "qwen3:4b"                    # local Ollama model tag (see `ollama list`)
+  host: "http://localhost:11434"       # local Ollama server; no API key needed
+  max_concurrent_requests: 4           # local thread-pool fan-out per stage -- tune to what the local server/GPU can actually parallelize
+  max_regeneration_attempts: 3         # QA-FAIL retry cap per unit before it's flagged for manual review instead
+
+scale:
+  customers: 40
+  tickets_per_customer: {avg: 5, min: 1, max: 10}
+  messages_per_ticket: {avg: 5, min: 2, max: 15}
+  eval_queries: 350
+
+distributions:
+  category_weights: {claims: 0.25, payment_posting: 0.18, prior_authorization: 0.16,
+                      accounts_receivable: 0.15, eligibility: 0.14, charge_entry: 0.12}
+  category_floor: 20
+  status_split: {non_terminal: 0.65, terminal: 0.35}
+  difficulty_tier_weights: {easy: 0.15, moderate_paraphrase: 0.25, hard_semantic: 0.20,
+                             hard_negative: 0.15, boilerplate: 0.10, same_customer_disambiguation: 0.15}
+  style:
+    tone: {professional: 0.6, casual: 0.4}
+    length_bucket: {short: 0.25, medium: 0.5, long: 0.25}
+    noise_level: {clean: 0.6, mild: 0.3, heavy: 0.1}
+  disambiguation_customers_min: 10
+
+paths:
+  state_db: "generation/state.sqlite3"
+  output_dir: "generation/output/full_scale_v1"

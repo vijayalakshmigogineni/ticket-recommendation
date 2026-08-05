@@ -1,0 +1,296 @@
+{
+  "mode": "repeat",
+  "repeat_count": 5,
+  "generated_at": "2026-08-04T09:27:39.869588+00:00",
+  "model_info": {
+    "decision_model": {
+      "model": "qwen3:4b",
+      "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "modified_at": "2026-07-28T01:06:42.3067965+05:30",
+      "size_bytes": 2497293931,
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "family": "qwen3"
+    },
+    "embedding_model": {
+      "model": "nomic-embed-text",
+      "parameter_size": "137M",
+      "quantization_level": "F16",
+      "family": "nomic-bert"
+    }
+  },
+  "queries": [
+    {
+      "key": "info_a3_priorauth_selfresolved",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A3"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 1.0,
+          "explanation": "The email explicitly states they found the auth number (auth #4471-B) on their end, directly resolving the 'missing prior authorization number' issue in Candidate 1 where the customer had the auth number but forgot to include it on the claim. This matches the ticket's context perfectly.",
+          "elapsed_s": 44.53511749999598
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "The incoming email explicitly states Valley Women's Health had the authorization number (auth #4471-B) on their end, which directly resolves the 'missing prior authorization number' issue in candidate ticket 1 (claim #90112). This matches the customer's admission in the ticket that they 'had an auth approved' but forgot to include it on the claim, with the email confirming they found it in a fax without needing provider intervention.",
+          "elapsed_s": 45.72135170002002
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "The incoming email explicitly states Valley Women's Health had the authorization number (auth #4471-B) on their end, which directly resolves the 'missing prior authorization number' issue in candidate ticket 1 (claim #90112). This matches the customer's admission in the ticket that they 'had an auth approved' but forgot to include it on the claim, with the email confirming they found it in a fax without needing provider intervention.",
+          "elapsed_s": 44.15027679997729
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "The incoming email explicitly states Valley Women's Health had the authorization number (auth #4471-B) on their end, which directly resolves the 'missing prior authorization number' issue in candidate ticket 1 (claim #90112). This matches the customer's admission in the ticket that they 'had an auth approved' but forgot to include it on the claim, with the email confirming they found it in a fax without needing provider intervention.",
+          "elapsed_s": 44.20080869999947
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "The incoming email explicitly states Valley Women's Health had the authorization number (auth #4471-B) on their end, which directly resolves the 'missing prior authorization number' issue in candidate ticket 1 (claim #90112). This matches the customer's admission in the ticket that they 'had an auth approved' but forgot to include it on the claim, with the email confirming they found it in a fax without needing provider intervention.",
+          "elapsed_s": 44.16541400004644
+        }
+      ],
+      "pass_count": 5,
+      "run_count": 5,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "A3"
+      ],
+      "stable": true
+    },
+    {
+      "key": "broken_headers_original_message",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "R2"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "R2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 1.0,
+          "explanation": "Incoming email directly addresses the same patient balance dispute issue as Candidate 1 (subject matches exactly: 'Patient balance dispute after insurance adjustment'), with the customer checking on EOB verification. The agent's previous confirmation in Candidate 1 (payer adjudicated $180) aligns with the email's focus on EOB matching patient responsibility. Cross-encoder score of 1.000 confirms high relevance, while Candidates 2 and 3 involve unrelated issues (check posting and CPT codes).",
+          "elapsed_s": 65.34947760001523
+        },
+        {
+          "actual_ticket_key": "R2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 1.0,
+          "explanation": "The incoming email directly follows up on the same patient balance dispute after insurance adjustment issue (exact subject match), with the customer specifically checking EOB confirmation as the agent previously reviewed and confirmed the $180 balance. The cross-encoder score of 1.000 confirms high relevance, while Candidate 2 (check posting) and Candidate 3 (CPT code) have zero relevance to this balance dispute context.",
+          "elapsed_s": 56.583304000028875
+        },
+        {
+          "actual_ticket_key": "R2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 1.0,
+          "explanation": "The incoming email directly follows up on the same patient balance dispute after insurance adjustment issue (exact subject match), with the customer specifically checking EOB confirmation as the agent previously reviewed and confirmed the $180 balance. The cross-encoder score of 1.000 confirms high relevance, while Candidate 2 (check posting) and Candidate 3 (CPT code) have zero relevance to this balance dispute context.",
+          "elapsed_s": 55.40581359999487
+        },
+        {
+          "actual_ticket_key": "R2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 1.0,
+          "explanation": "The incoming email directly follows up on the same patient balance dispute after insurance adjustment issue (exact subject match), with the customer specifically checking EOB confirmation as the agent previously reviewed and confirmed the $180 balance. The cross-encoder score of 1.000 confirms high relevance, while Candidate 2 (check posting) and Candidate 3 (CPT code) have zero relevance to this balance dispute context.",
+          "elapsed_s": 54.34400799998548
+        },
+        {
+          "actual_ticket_key": "R2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 1.0,
+          "explanation": "The incoming email directly follows up on the same patient balance dispute after insurance adjustment issue (exact subject match), with the customer specifically checking EOB confirmation as the agent previously reviewed and confirmed the $180 balance. The cross-encoder score of 1.000 confirms high relevance, while Candidate 2 (check posting) and Candidate 3 (CPT code) have zero relevance to this balance dispute context.",
+          "elapsed_s": 54.57636489998549
+        }
+      ],
+      "pass_count": 5,
+      "run_count": 5,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "R2"
+      ],
+      "stable": true
+    },
+    {
+      "key": "archive_c4_claims_selfresolved",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C4"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "A3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.9,
+          "explanation": "The email explicitly states the payer has agreed to reprocess the claim after finding the original submission confirmation, directly matching Candidate 1's resolution where claim #90112 was reprocessed and paid under the original authorization. This aligns perfectly with the agent's final closure message in the ticket history (\"Claim #90112 reprocessed and paid correctly under the original auth. Closing this out\"). Candidate 2 and 3 involve coverage termination and timely filing issues, which are unrelated to the reprocessing context described.",
+          "elapsed_s": 68.62452079996001
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.9,
+          "explanation": "Incoming email confirms the customer found the original submission confirmation and payer agreed to reprocess the claim, directly matching Candidate 1's resolution where the payer agreed to reprocess claim #90112 and the ticket was closed. The context aligns perfectly with the last interaction in Candidate 1 (claim reprocessed and paid correctly), while Candidate 2 and 3 involve unrelated issues (coverage termination and timely filing limits).",
+          "elapsed_s": 66.46722930000396
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.9,
+          "explanation": "Incoming email confirms the customer found the original submission confirmation and payer agreed to reprocess the claim, directly matching Candidate 1's resolution where the payer agreed to reprocess claim #90112 and the ticket was closed. The context aligns perfectly with the last interaction in Candidate 1 (claim reprocessed and paid correctly), while Candidate 2 and 3 involve unrelated issues (coverage termination and timely filing limits).",
+          "elapsed_s": 64.7903335999581
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.9,
+          "explanation": "Incoming email confirms the customer found the original submission confirmation and payer agreed to reprocess the claim, directly matching Candidate 1's resolution where the payer agreed to reprocess claim #90112 and the ticket was closed. The context aligns perfectly with the last interaction in Candidate 1 (claim reprocessed and paid correctly), while Candidate 2 and 3 involve unrelated issues (coverage termination and timely filing limits).",
+          "elapsed_s": 64.88490569998976
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.9,
+          "explanation": "Incoming email confirms the customer found the original submission confirmation and payer agreed to reprocess the claim, directly matching Candidate 1's resolution where the payer agreed to reprocess claim #90112 and the ticket was closed. The context aligns perfectly with the last interaction in Candidate 1 (claim reprocessed and paid correctly), while Candidate 2 and 3 involve unrelated issues (coverage termination and timely filing limits).",
+          "elapsed_s": 64.71078669995768
+        }
+      ],
+      "pass_count": 0,
+      "run_count": 5,
+      "pass_rate": 0.0,
+      "distinct_answers": [
+        "A3"
+      ],
+      "stable": true
+    },
+    {
+      "key": "a3_explicit_claim",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A3"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.999,
+          "explanation": "The email specifically references claim #90112 and asks about the authorization number addition, directly matching the ticket's issue of missing prior authorization number for the same claim (as stated in the customer's initial message: 'Claim #90112 just got rejected for 'missing prior authorization number''). The cross-encoder score of 0.999 confirms high relevance, and the claim number and core issue align perfectly with no other candidate tickets.",
+          "elapsed_s": 93.41226099996129
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.999,
+          "explanation": "The incoming email specifically references claim #90112 and asks if the authorization number has been added, which directly matches Candidate 1's context where the customer previously mentioned claim #90112 was rejected for 'missing prior authorization number' and the agent had added it (resubmitted claim). The cross-encoder score of 0.999 confirms high relevance, while Candidates 2 and 3 involve different claim numbers (81044) and unrelated issues (timely filing vs. coverage termination).",
+          "elapsed_s": 55.42376570001943
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.99,
+          "explanation": "The incoming email specifically asks about claim #90112 and whether the authorization number has been added. This directly matches Candidate 1's context where the customer previously reported claim #90112 was rejected for 'missing prior authorization number' and the agent had just resubmitted the claim with the authorization number added. The claim number (90112) and the core issue (missing authorization number) are identical. Candidate 2 and Candidate 3 have different claim numbers (81044 and unspecified) and unrelated issues (timely filing vs. coverage termination), so they are not relevant. The high cross-encoder score (0.999) confirms this is the strongest match.",
+          "elapsed_s": 38.28141550003784
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.99,
+          "explanation": "The incoming email specifically asks about claim #90112 and whether the authorization number has been added. This directly matches Candidate 1's context where the customer previously reported claim #90112 was rejected for 'missing prior authorization number' and the agent had just resubmitted the claim with the authorization number added. The claim number (90112) and the core issue (missing authorization number) are identical. Candidate 2 and Candidate 3 have different claim numbers (81044 and unspecified) and unrelated issues (timely filing vs. coverage termination), so they are not relevant. The high cross-encoder score (0.999) confirms this is the strongest match.",
+          "elapsed_s": 37.661369700043
+        },
+        {
+          "actual_ticket_key": "A3",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.99,
+          "explanation": "The incoming email specifically asks about claim #90112 and whether the authorization number has been added. This directly matches Candidate 1's context where the customer previously reported claim #90112 was rejected for 'missing prior authorization number' and the agent had just resubmitted the claim with the authorization number added. The claim number (90112) and the core issue (missing authorization number) are identical. Candidate 2 and Candidate 3 have different claim numbers (81044 and unspecified) and unrelated issues (timely filing vs. coverage termination), so they are not relevant. The high cross-encoder score (0.999) confirms this is the strongest match.",
+          "elapsed_s": 37.77937549998751
+        }
+      ],
+      "pass_count": 5,
+      "run_count": 5,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "A3"
+      ],
+      "stable": true
+    }
+  ]
+}

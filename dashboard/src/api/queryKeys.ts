@@ -1,0 +1,15 @@
+export const queryKeys = {
+  systemStatus: ['system', 'status'] as const,
+  systemSettings: ['system', 'settings'] as const,
+  indexInfo: ['system', 'index-info'] as const,
+  customers: ['customers'] as const,
+  tickets: (params: unknown) => ['tickets', params] as const,
+  ticket: (id: string) => ['ticket', id] as const,
+  interactions: (params: unknown) => ['interactions', params] as const,
+  interaction: (id: string, topN: number) => ['interaction', id, topN] as const,
+  evaluationStatus: ['evaluation', 'status'] as const,
+  abBenchmarkStatus: ['evaluation', 'ab-benchmark'] as const,
+  lastRun: ['run', 'last'] as const,
+  lastCompare: ['run', 'last-compare'] as const,
+  feedback: (params: unknown) => ['feedback', params] as const,
+}

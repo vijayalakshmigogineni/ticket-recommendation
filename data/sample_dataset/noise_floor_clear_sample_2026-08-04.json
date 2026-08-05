@@ -1,0 +1,264 @@
+{
+  "mode": "repeat",
+  "repeat_count": 3,
+  "generated_at": "2026-08-04T03:46:05.507847+00:00",
+  "model_info": {
+    "decision_model": {
+      "model": "qwen3:4b",
+      "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "modified_at": "2026-07-28T01:06:42.3067965+05:30",
+      "size_bytes": 2497293931,
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "family": "qwen3"
+    },
+    "embedding_model": {
+      "model": "nomic-embed-text",
+      "parameter_size": "137M",
+      "quantization_level": "F16",
+      "family": "nomic-bert"
+    }
+  },
+  "queries": [
+    {
+      "key": "pm1_paraphrase",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM1"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "PM1",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.996,
+          "explanation": "Matches candidate 1 exactly: patient R. Simmons, epidural injection, claim denied due to missing prior auth number, and request to resubmit with auth number added.",
+          "elapsed_s": 118.02740710001672
+        },
+        {
+          "actual_ticket_key": "PM1",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.996,
+          "explanation": "Exact match: same patient (R. Simmons), same procedure (epidural injection), same issue (missing prior authorization number), and identical request to resubmit with auth number. Cross-encoder score of 0.996 confirms high similarity.",
+          "elapsed_s": 78.63072919996921
+        },
+        {
+          "actual_ticket_key": "PM1",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.996,
+          "explanation": "Exact match: same patient (R. Simmons), same procedure (epidural injection), same issue (missing prior authorization number), and identical request to resubmit with auth number. Cross-encoder score of 0.996 confirms high similarity.",
+          "elapsed_s": 76.42112109996378
+        }
+      ],
+      "pass_count": 3,
+      "run_count": 3,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "PM1"
+      ],
+      "stable": true
+    },
+    {
+      "key": "thankyou_c2_closed",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C2"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "C2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "Incoming email explicitly references 'NPI issue' fix and confirms 'resubmission went through fine', directly matching Candidate 1's resolved claim issue with invalid NPI rendering provider (where customer previously checked resubmission status and agent confirmed success). No other candidate addresses NPI or resubmission context.",
+          "elapsed_s": 60.63299680000637
+        },
+        {
+          "actual_ticket_key": "C2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "The email explicitly mentions 'NPI issue' and 'resubmission went through fine', directly matching Candidate 1's context of fixing an invalid NPI rejection and successful resubmission (per the ticket's closed resolution where the agent confirmed the claim was accepted). The cross-encoder score (0.067) is significantly higher than the others (0.000), and there's no ambiguity in the underlying issue.",
+          "elapsed_s": 55.417906999995466
+        },
+        {
+          "actual_ticket_key": "C2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.95,
+          "explanation": "The email explicitly mentions 'NPI issue' and 'resubmission went through fine', directly matching Candidate 1's context of fixing an invalid NPI rejection and successful resubmission (per the ticket's closed resolution where the agent confirmed the claim was accepted). The cross-encoder score (0.067) is significantly higher than the others (0.000), and there's no ambiguity in the underlying issue.",
+          "elapsed_s": 54.512561700015794
+        }
+      ],
+      "pass_count": 3,
+      "run_count": 3,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "C2"
+      ],
+      "stable": true
+    },
+    {
+      "key": "info_c7_claims_closed",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C7"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "C7",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.9,
+          "explanation": "The incoming email explicitly details the root cause of the incorrect place of service code (POS 11 vs 24) that was the subject of the closed ticket (Candidate 1), specifically that the scheduling system had the wrong site flagged. This directly addresses the issue the customer initially reported in the ticket (Claim #71204 for patient T. Nguyen), and the corrective action taken (fixing the scheduling system) aligns with preventing recurrence for future claims\u2014exactly the context described in the ticket's interactions. Candidate 2 and 3 are unrelated (unit count errors and AR follow-ups), and the cross-encoder score (0.252) for Candidate 1 confirms strong contextual alignment.",
+          "elapsed_s": 50.72689739998896
+        },
+        {
+          "actual_ticket_key": "C7",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.85,
+          "explanation": "The incoming email explicitly details the root cause of the incorrect place-of-service code (POS 11 vs 24) that caused the claim rejection in Candidate 1, stating that their scheduling system had the wrong site flagged for the surgery center and they've corrected it to prevent recurrence. This directly addresses the core issue in Candidate 1 (claim rejected for incorrect POS code) where the agent previously confirmed POS 24 was required for ambulatory surgical centers. The cross-encoder score (0.252) and contextual alignment confirm this is the same underlying issue, while Candidate 2 (unit count error) and Candidate 3 (Cigna aging balance) are unrelated.",
+          "elapsed_s": 35.87345859996276
+        },
+        {
+          "actual_ticket_key": "C7",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.85,
+          "explanation": "The incoming email explicitly details the root cause of the incorrect place-of-service code (POS 11 vs 24) that caused the claim rejection in Candidate 1, stating that their scheduling system had the wrong site flagged for the surgery center and they've corrected it to prevent recurrence. This directly addresses the core issue in Candidate 1 (claim rejected for incorrect POS code) where the agent confirmed POS 24 was required for ambulatory surgical centers. The cross-encoder score (0.252) and contextual alignment confirm this is the same underlying issue, while Candidate 2 (unit count error) and Candidate 3 (Cigna aging balance) are unrelated topics.",
+          "elapsed_s": 35.170753499958664
+        }
+      ],
+      "pass_count": 3,
+      "run_count": 3,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "C7"
+      ],
+      "stable": true
+    },
+    {
+      "key": "broken_headers_html_blockquote",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G2"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "G2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.908,
+          "explanation": "The incoming email directly addresses the missing charge entry for date 06/14 (same subject as Candidate 1) and provides the CPT 99213 and diagnosis M54.5 codes that the agent in Candidate 1's ticket explicitly requested for manual entry. This matches the context of the customer's follow-up on the unresolved charge entry issue, while Candidate 2 and Candidate 3 involve completely different claims (denial due to CO-45 and duplicate payments) with no overlap in subject, date, or codes.",
+          "elapsed_s": 44.57647489994997
+        },
+        {
+          "actual_ticket_key": "G2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.908,
+          "explanation": "Incoming email directly addresses Candidate 1's missing charge entry issue for 06/14 by providing the exact CPT 99213 and diagnosis M54.5 codes the agent requested for manual entry, matching the ticket's subject and context perfectly.",
+          "elapsed_s": 51.254366700013634
+        },
+        {
+          "actual_ticket_key": "G2",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.908,
+          "explanation": "Incoming email directly addresses Candidate 1's missing charge entry issue for 06/14 by providing the exact CPT 99213 and diagnosis M54.5 codes the agent requested for manual entry, matching the ticket's subject and context perfectly.",
+          "elapsed_s": 52.34001189999981
+        }
+      ],
+      "pass_count": 3,
+      "run_count": 3,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "G2"
+      ],
+      "stable": true
+    },
+    {
+      "key": "crosscust_e1_pm5_eligibility",
+      "category": "cross_customer_similarity",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E1"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "E1",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.995,
+          "explanation": "Incoming email describes D. Marsh's eligibility verification still showing 'not found' on portal, matching candidate 1's exact issue (new patient eligibility check failing) and context.",
+          "elapsed_s": 62.583799200016074
+        },
+        {
+          "actual_ticket_key": "E1",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.995,
+          "explanation": "Matches candidate 1: same patient (D. Marsh) and eligibility issue with 'not found' portal error",
+          "elapsed_s": 78.89796909998404
+        },
+        {
+          "actual_ticket_key": "E1",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.995,
+          "explanation": "Matches candidate 1: same patient (D. Marsh) and eligibility issue with 'not found' portal error",
+          "elapsed_s": 77.43006079999031
+        }
+      ],
+      "pass_count": 3,
+      "run_count": 3,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "E1"
+      ],
+      "stable": true
+    }
+  ]
+}

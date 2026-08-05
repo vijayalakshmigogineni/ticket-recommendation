@@ -1,0 +1,301 @@
+{
+  "mode": "repeat",
+  "repeat_count": 5,
+  "generated_at": "2026-08-04T03:29:40.397407+00:00",
+  "model_info": {
+    "decision_model": {
+      "model": "qwen3:4b",
+      "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "modified_at": "2026-07-28T01:06:42.3067965+05:30",
+      "size_bytes": 2497293931,
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "family": "qwen3"
+    },
+    "embedding_model": {
+      "model": "nomic-embed-text",
+      "parameter_size": "137M",
+      "quantization_level": "F16",
+      "family": "nomic-bert"
+    }
+  },
+  "queries": [
+    {
+      "key": "thankyou_ambiguous_lowcontent",
+      "category": "thank_you_appreciation",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "A1",
+        "R4"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic thank you message with no specific context about billing units, outstanding balances, or NPI issues. None of the candidate tickets have conversation context that aligns with this generic acknowledgment, and the cross-encoder scores (all 0.000) indicate no meaningful thematic overlap. The email does not reference the underlying issues of any candidate ticket, so it should not be forced into any match.",
+          "elapsed_s": 58.793557099998
+        },
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic thank you message without specific context linking it to any candidate ticket. The cross-encoder scores are 0.000 for all candidates, indicating no meaningful match. While the email could be a follow-up to a resolved ticket (e.g., Candidate 1 or Candidate 3), the email lacks details to determine which specific ticket the customer is thanking for. Without additional context to identify the underlying issue (e.g., reference to the ticket, resolution details, or customer intent), it cannot be safely attached to any candidate. The instructions prohibit forcing a match, so it should not be attached to any of them.",
+          "elapsed_s": 78.45801010000287
+        },
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic thank you message without specific context linking it to any candidate ticket. The cross-encoder scores are 0.000 for all candidates, indicating no meaningful match. While the customer (Sunridge Orthopedic Associates) has resolved tickets (Candidate 1 and 3), the email lacks details to determine which resolved issue the customer is thanking for. Forcing a match would be inaccurate without additional context (e.g., reference to the ticket, specific issue, or timing). Per instructions, I do not force a match when the email doesn't genuinely align with any candidate's underlying issue.",
+          "elapsed_s": 77.23954709997633
+        },
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic thank you message without specific context linking it to any candidate ticket. The cross-encoder scores are 0.000 for all candidates, indicating no meaningful match. While the customer (Sunridge Orthopedic Associates) has resolved tickets (Candidate 1 and 3), the email lacks details to determine which resolved issue the customer is thanking for. Forcing a match would be inaccurate without additional context (e.g., reference to the ticket, specific issue, or timing). Per instructions, I do not force a match when the email doesn't genuinely align with any candidate's underlying issue.",
+          "elapsed_s": 77.67838149995077
+        },
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic thank you message without specific context linking it to any candidate ticket. The cross-encoder scores are 0.000 for all candidates, indicating no meaningful match. While the customer (Sunridge Orthopedic Associates) has resolved tickets (Candidate 1 and 3), the email lacks details to determine which resolved issue the customer is thanking for. Forcing a match would be inaccurate without additional context (e.g., reference to the ticket, specific issue, or timing). Per instructions, I do not force a match when the email doesn't genuinely align with any candidate's underlying issue.",
+          "elapsed_s": 78.3245066999807
+        }
+      ],
+      "pass_count": 0,
+      "run_count": 5,
+      "pass_rate": 0.0,
+      "distinct_answers": [
+        null
+      ],
+      "stable": true
+    },
+    {
+      "key": "info_ambiguous_archive_boundary",
+      "category": "informational_email",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "E1",
+        "A2"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email states the customer has resolved the issue and requires no action, but all candidate tickets remain active with unresolved problems (expired prior auth, claims needing modifier correction, and eligibility verification failure). The email does not match any candidate's current context, as the customer's claim of resolution contradicts the ongoing status of each ticket. Cross-encoder scores of 0.000 confirm no meaningful overlap.",
+          "elapsed_s": 57.73427439999068
+        },
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic closure message stating 'we think everything's handled on our end now, no action needed' without specific context about the candidate tickets' issues. None of the candidate tickets (prior auth expired, claims denied for missing modifier 25, eligibility verification failed) have resolution context that matches this email's content. The cross-encoder scores are all 0.000, indicating no meaningful similarity. The email does not reference the specific problems (e.g., cardiac catheterization dates, E/M codes, new patient eligibility) or indicate resolution of the active issues in any candidate ticket. Therefore, it should not be forced into any candidate ticket.",
+          "elapsed_s": 89.38845239998773
+        },
+        {
+          "actual_ticket_key": "C3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.7,
+          "explanation": "The customer's message indicates they believe the claims issue (missing modifier 25) is resolved with no further action needed, which aligns with Candidate 2's context where the agent was resubmitting claims after adding the modifier. The other tickets are still active (Candidate 1: IN_PROGRESS, Candidate 3: OPEN), and the customer would not claim resolution until the agent completes the work. The cross-encoder score of 0.000 is low, but the conversation context shows a natural progression from the customer's follow-up question to this closure note.",
+          "elapsed_s": 83.85576970002148
+        },
+        {
+          "actual_ticket_key": "C3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.7,
+          "explanation": "The customer's message indicates they believe the issue (claims with missing modifier 25) is resolved and no further action is needed, which aligns with Candidate 2's context where the agent was resubmitting claims after adding the modifier. The other tickets are still active (Candidate 1: IN_PROGRESS, Candidate 3: OPEN), and the customer would not claim resolution until the agent completes the work. The cross-encoder score of 0.000 is low, but the conversation context shows a natural progression from the customer's follow-up question to this closure note.",
+          "elapsed_s": 82.80442190001486
+        },
+        {
+          "actual_ticket_key": "C3",
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.7,
+          "explanation": "The customer's message indicates they believe the issue (claims with missing modifier 25) is resolved and no further action is needed, which aligns with Candidate 2's context where the agent was resubmitting claims after adding the modifier. The other tickets are still active (Candidate 1: IN_PROGRESS, Candidate 3: OPEN), and the customer would not claim resolution until the agent completes the work. The cross-encoder score of 0.000 is low, but the conversation context shows a natural progression from the customer's follow-up question to this closure note.",
+          "elapsed_s": 85.4576503999997
+        }
+      ],
+      "pass_count": 0,
+      "run_count": 5,
+      "pass_rate": 0.0,
+      "distinct_answers": [
+        "C3",
+        null
+      ],
+      "stable": false
+    },
+    {
+      "key": "archive_c4_claims_selfresolved",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C4"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": "C4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.8,
+          "explanation": "The incoming email states the customer found the original submission confirmation and the payer agreed to reprocess the claim, which directly matches candidate 2's context (claim denied for timely filing limit exceeded) where the customer has proof of original submission and the payer is now resolving the issue. Candidate 1 is already closed and the email refers to closing a ticket, so it doesn't apply. Candidate 3 involves a missing prior auth number, which isn't mentioned in the email. The cross-encoder score for candidate 2 (0.003) is low but the contextual alignment is strong, while candidate 1's higher score (0.007) is irrelevant due to its closed status.",
+          "elapsed_s": 66.23737180000171
+        },
+        {
+          "actual_ticket_key": "C4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.85,
+          "explanation": "The incoming email states the customer found the original submission confirmation and the payer agreed to reprocess the claim, which directly resolves the 'timely filing limit exceeded' issue in candidate 2. The customer explicitly mentions having proof of original submission (matching the email's 'found the original submission confirmation'), and the payer's agreement to reprocess aligns with the claim denial cause in candidate 2. Candidate 1 is already closed and unrelated to the email's context, while candidate 3 involves prior authorization issues (not mentioned in the email). The cross-encoder score for candidate 2 (0.003) is low but the content match is strong for this specific resolution.",
+          "elapsed_s": 58.42781109997304
+        },
+        {
+          "actual_ticket_key": "C4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.85,
+          "explanation": "The incoming email states the customer found the original submission confirmation and the payer agreed to reprocess the claim, which directly resolves the 'timely filing limit exceeded' issue in candidate 2. The customer explicitly mentions having proof of original submission (matching the email's 'found the original submission confirmation'), and the payer's agreement to reprocess aligns with the claim denial cause in candidate 2. Candidate 1 is already closed and unrelated to the email's context, while candidate 3 involves prior authorization issues (not mentioned in the email). The cross-encoder score for candidate 2 (0.003) is low but the content match is strong for this specific resolution.",
+          "elapsed_s": 57.190841800009366
+        },
+        {
+          "actual_ticket_key": "C4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.85,
+          "explanation": "The incoming email states the customer found the original submission confirmation and the payer agreed to reprocess the claim, which directly resolves the 'timely filing limit exceeded' issue in candidate 2. The customer explicitly mentions having proof of original submission (matching the email's 'found the original submission confirmation'), and the payer's agreement to reprocess aligns with the claim denial cause in candidate 2. Candidate 1 is already closed and unrelated to the email's context, while candidate 3 involves prior authorization issues (not mentioned in the email). The cross-encoder score for candidate 2 (0.003) is low but the content match is strong for this specific resolution.",
+          "elapsed_s": 57.35115990001941
+        },
+        {
+          "actual_ticket_key": "C4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.85,
+          "explanation": "The incoming email states the customer found the original submission confirmation and the payer agreed to reprocess the claim, which directly resolves the 'timely filing limit exceeded' issue in candidate 2. The customer explicitly mentions having proof of original submission (matching the email's 'found the original submission confirmation'), and the payer's agreement to reprocess aligns with the claim denial cause in candidate 2. Candidate 1 is already closed and unrelated to the email's context, while candidate 3 involves prior authorization issues (not mentioned in the email). The cross-encoder score for candidate 2 (0.003) is low but the content match is strong for this specific resolution.",
+          "elapsed_s": 56.87356700003147
+        }
+      ],
+      "pass_count": 5,
+      "run_count": 5,
+      "pass_rate": 1.0,
+      "distinct_answers": [
+        "C4"
+      ],
+      "stable": true
+    },
+    {
+      "key": "archive_ambiguous_lakeside",
+      "category": "archive_no_action",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "A4",
+        "P1"
+      ],
+      "runs": [
+        {
+          "actual_ticket_key": null,
+          "correct": false,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.0,
+          "explanation": "The incoming email is a generic closure message ('All set... everything's fine on our end now - no action needed') that does not specify which resolved issue it refers to. While both Candidate 1 (RESOLVED) and Candidate 3 (RESOLVED) are resolved tickets where the customer could send such a message, the email lacks context to determine which specific ticket it belongs to. The cross-encoder scores are all 0.000, indicating no meaningful similarity to the candidate tickets. Given the requirement to not force a match and the absence of specific details in the email, it cannot be confidently attached to any candidate. The underlying issue of the email is too generic to align with one specific ticket's context.",
+          "elapsed_s": 86.20421080000233
+        },
+        {
+          "actual_ticket_key": "A4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.8,
+          "explanation": "The incoming email is a closure message confirming resolution with no action needed. Candidate 1 (status: RESOLVED) matches this context perfectly, as the last agent interaction confirmed the prior auth was approved and the appointment proceeds as scheduled. The customer's message aligns with the resolved state of this ticket. Candidate 2 is still in progress (IN_PROGRESS), so it does not match. Candidate 3 is resolved but the email is too generic to be a specific closure for that payment issue without additional context; Candidate 1 is the most natural fit given the urgent resolution context.",
+          "elapsed_s": 85.10924939997494
+        },
+        {
+          "actual_ticket_key": "A4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.8,
+          "explanation": "The incoming email is a closure message confirming resolution with no action needed. Candidate 1 (status: RESOLVED) matches this context perfectly, as the last agent interaction confirmed the prior auth was approved and the appointment proceeds as scheduled. The customer's message aligns with the resolved state of this ticket. Candidate 2 is still in progress (IN_PROGRESS), so it does not match. Candidate 3 is resolved but the email is too generic to be a strong match for this specific ticket (which involved payment adjustments), whereas Candidate 1 has a more direct alignment with the customer's urgency and resolution context.",
+          "elapsed_s": 83.30107470002258
+        },
+        {
+          "actual_ticket_key": "A4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.8,
+          "explanation": "The incoming email is a closure message confirming resolution with no action needed. Candidate 1 (status: RESOLVED) matches this context perfectly, as the last agent interaction confirmed the prior auth was approved and the appointment proceeds as scheduled. The customer's message aligns with the resolved state of this ticket. Candidate 2 is still in progress (IN_PROGRESS), so it does not match. Candidate 3 is resolved but the email is too generic to be a strong match for this specific ticket (which involved payment adjustments), whereas Candidate 1 has a more direct alignment with the customer's urgency and resolution context.",
+          "elapsed_s": 83.13969290000387
+        },
+        {
+          "actual_ticket_key": "A4",
+          "correct": true,
+          "recall20": true,
+          "recall3": true,
+          "path": "ai_decision",
+          "confidence": 0.8,
+          "explanation": "The incoming email is a closure message confirming resolution with no action needed. Candidate 1 (status: RESOLVED) matches this context perfectly, as the last agent interaction confirmed the prior auth was approved and the appointment proceeds as scheduled. The customer's message aligns with the resolved state of this ticket. Candidate 2 is still in progress (IN_PROGRESS), so it does not match. Candidate 3 is resolved but the email is too generic to be a strong match for this specific ticket (which involved payment adjustments), whereas Candidate 1 has a more direct alignment with the customer's urgency and resolution context.",
+          "elapsed_s": 150.61351609998383
+        }
+      ],
+      "pass_count": 4,
+      "run_count": 5,
+      "pass_rate": 0.8,
+      "distinct_answers": [
+        "A4",
+        null
+      ],
+      "stable": false
+    }
+  ]
+}

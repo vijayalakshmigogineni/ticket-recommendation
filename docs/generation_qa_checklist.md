@@ -10,7 +10,7 @@ Nine checks were asked for. Not all of them need an LLM call — some are cheape
 |---|---|---|
 | **Deterministic (rule-based)** | Anything with an objectively correct answer from the data itself: enum membership, referential integrity, ordering, required fields, regex/leakage scans, word-count bins | Free, instant, zero false-negatives on what it checks |
 | **Statistical (batch-level)** | Things that are only meaningful in aggregate: realized category/difficulty/style distributions vs. spec targets | Free, runs once per batch not per item |
-| **LLM-judged (semantic)** | Genuine judgment calls a regex can't make: does this read as coherent, is this issue really this category/issue_type, is this distractor plausible | Costs a call, reserved for what actually needs it |
+| **LLM-judged (semantic)** | Genuine judgment calls a regex can't make: does this read as coherent, is this issue really this category, is this distractor plausible | Costs a call, reserved for what actually needs it |
 
 Where a check can be caught by a rule, it is — LLM judges are for the residual semantic judgment only. This also means the same `hard_negative`-vocabulary-imitation failure mode gets caught twice, once cheaply (category-mismatch rule) and once semantically (Judge 1), which is more robust than either alone.
 
@@ -30,25 +30,25 @@ Runs on Template 1 output. Cheap, deterministic only — no semantic judgment ne
 
 | Check | Method | Rule | On fail |
 |---|---|---|---|
-| Required fields present | Rule | `name`, ≥1 `contacts[]` with non-empty `email` | FAIL |
-| Email format valid | Rule | Standard email regex | FAIL |
-| No duplicate emails across customers in batch | Rule | Dedup check across the whole batch (schema has a unique constraint on `email_address` — catch this before it hits the DB, not after) | FAIL |
+| Required fields present | Rule | `production_fields.name`, `production_fields.inbox_email` non-empty; `generation_metadata.contacts[]` has ≥1 entry with non-empty `email` | FAIL |
+| Email format valid | Rule | Standard email regex, both `inbox_email` and every `contacts[].email` | FAIL |
+| No duplicate `inbox_email` across customers in batch | Rule | Dedup check across the whole batch (schema has a unique constraint on `inbox_email` — catch this before it hits the DB, not after) | FAIL |
+| `inbox_email` distinct from every `contacts[].email` | Rule | The shared inbox must not equal an individual contact's address, per Template 1's instruction | FLAG |
 | No duplicate practice name in batch/avoid-list | Rule | String match against batch + orchestrator's avoid-list | FLAG (regenerate that one customer is cheap) |
 
 ## 2. Ticket Seed QA
 
-Runs on Template 2 output. Covers checklist items **#1 (category and issue_type validity)** and **#2 (category/issue_type/content consistency)**.
+Runs on Template 2 output. Covers checklist items **#1 (category validity)** and **#2 (category/content consistency)**. No `issue_type` checks — confirmed the real production system has no such field, so it was removed from the schema entirely (`app/enums.py`/`app/models.py`), not just left unpersisted; scenario specificity and sibling distinctness are judged from free text instead (`generation_metadata.core_issue_summary`/`distinguishing_details`).
 
 | Check | Method | Rule | On fail |
 |---|---|---|---|
 | Category is a valid enum value | Rule | Exact match against `TicketCategory` (`claims`, `payment_posting`, `prior_authorization`, `accounts_receivable`, `eligibility`, `charge_entry`) | FAIL |
-| Issue Type is a valid enum value for its category | Rule | Exact match against the assigned category's Issue Type list (spec §2 / Template 2 table — the default v1 controlled vocabulary) | FAIL |
-| Status is a valid enum value | Rule | Exact match against `TicketStatus` | FAIL |
-| Category and issue_type match the orchestrator's assignment | Rule | Seed's `category`/`issue_type`/`status` must equal what was assigned in the prompt, not something the model substituted | FAIL |
-| Closed-ticket date logic | Rule | If `status=closed`, `closed_at_offset_days` must be present and less negative (more recent) than `created_at_offset_days` | FAIL |
-| Sibling distinctness (disambiguation-tier customers) | Rule | `distinguishing_details` non-empty; `claim_number`/`patient_id` differ from every sibling seed sharing category; sibling's `issue_type` is a valid value under the same category (mechanical check only — see next row for the semantic "plausibly confusable" judgment) | FAIL |
-| **Sibling pairing plausibility (disambiguation-tier)** | **LLM judge (Judge 1, sibling question)** | When two sibling tickets share a category, is their issue_type pairing genuinely plausible to confuse in production (e.g. `claim_denial` + `claim_rejection_clearinghouse`), not just two different enum values that happen to share a category (e.g. `claim_denial` + `documentation_request_from_payer`)? | FLAG if judge says implausible/too-dissimilar |
-| **Category & issue_type / content consistency** | **LLM judge (Judge 1, ticket-seed pass)** | Given category + issue_type + `core_issue_summary`/`procedure_description`, would an RCM domain expert file this under the assigned category *and* issue_type, or different ones? | FLAG if judge disagrees on issue_type only, FAIL if judge says "clearly wrong category" |
+| Status is a valid enum value | Rule | Exact match against `TicketStatus` (`OPEN`, `IN_PROGRESS`, `PENDING`, `WAITING_FOR_CLIENT`, `RESOLVED`, `CLOSED`) | FAIL |
+| Category and status match the orchestrator's assignment | Rule | `production_fields.category`/`status` must equal what was assigned in the prompt, not something the model substituted | FAIL |
+| Closed-ticket date logic | Rule | If `status` is `RESOLVED`/`CLOSED`, `closed_at_offset_days` must be present and less negative (more recent) than `created_at_offset_days` — **and** consistent with the conversation's own last message (see §3's closed-ticket resolution-shape check; a pilot run caught exactly this cross-field bug, see `pilot/qa_report.md` finding #1) | FAIL |
+| Sibling distinctness (disambiguation-tier customers) | Rule | `generation_metadata.distinguishing_details` non-empty; `claim_number`/`patient_id` differ from every sibling seed sharing category | FAIL |
+| **Sibling pairing plausibility (disambiguation-tier)** | **LLM judge (Judge 1, sibling question)** | When two sibling tickets share a category, is the underlying issue described in their `core_issue_summary`/`distinguishing_details` genuinely plausible to confuse in production (e.g. two different epidural-injection denial reasons), or only nominally similar because they share a category label? | FLAG if judge says implausible/too-dissimilar |
+| **Category & content consistency** | **LLM judge (Judge 1, ticket-seed pass)** | Given category + `core_issue_summary`/`procedure_description`, would an RCM domain expert file this under the assigned category, or a different one? | FLAG if judge disagrees, FAIL if judge says "clearly wrong category" |
 
 ## 3. Conversation QA
 
@@ -56,10 +56,10 @@ Runs on Template 3 output. Covers checklist items **#3 (logical flow)** and **#4
 
 | Check | Method | Rule | On fail |
 |---|---|---|---|
-| Message 1 structure | Rule | `messages[0].sender_type == "client"`, `intent_type == "initial_request"` | FAIL |
+| Message 1 structure | Rule | `messages[0].production_fields.sender_type == "client"`, `messages[0].generation_metadata.intent_type == "initial_request"` | FAIL |
 | Intent/tone/length/noise are valid enum values | Rule | Exact match against `MessageIntent`/`Tone`/`LengthBucket`/`NoiseLevel` | FAIL |
 | Day offsets non-decreasing | Rule | `day_offset[i] >= day_offset[i-1]` | FAIL |
-| Closed-ticket resolution shape | Rule | If `status=closed`, last message is `account_manager`+resolution-flavored intent or `client`+`thank_you`; final `day_offset` ≤ `closed_at_offset_days` | FLAG |
+| Closed-ticket resolution shape | Rule | If `status` is terminal (`RESOLVED`/`CLOSED`), last message is `account_manager`+resolution-flavored intent or `client`+`thank_you`; final `day_offset` ≤ `closed_at_offset_days` | FLAG |
 | Sender-alternation degeneracy | Rule | No run of 3+ consecutive messages from the same `sender_type` unless the thread has ≤3 messages total | FLAG (occasionally realistic, usually a generation tell) |
 | Grounding facts echoed correctly | Rule | `claim_number`/`patient_id`/`payer`/`date_of_service` appearing in message text match the ticket seed's values (no silent drift) | FAIL |
 | **Logical flow / intent-content match** | **LLM judge (Judge 1, conversation pass)** | Read the thread top-to-bottom: does each message make sense given what preceded it, no contradictions (e.g. claim number changes mid-thread), does each message's content actually match its `intent_type` tag (a `thank_you`-tagged message that's actually a new complaint is a mislabel) | FLAG if minor, FAIL if a message contradicts an established fact |
@@ -71,7 +71,7 @@ Runs on Template 4 output. Covers checklist item **#5 (query plausibility)**.
 | Check | Method | Rule | On fail |
 |---|---|---|---|
 | Non-empty, non-degenerate text | Rule | Reasonable length, not empty/gibberish/repeated-token | FAIL |
-| Label-leakage scan | Rule | `email_text` must not contain any enum literal (`hard_semantic`, `same_customer_disambiguation`, `should_match`, `claim_denial`, `missing_clinical_documentation`, or any other category/issue_type value, etc.), the words "difficulty tier"/"ground truth"/"distractor", or any `temp_id` string | FAIL — this is the single highest-value automated check, since it directly enforces Template 4's own anti-leakage instruction |
+| Label-leakage scan | Rule | `email_text` must not contain any enum literal (`hard_semantic`, `same_customer_disambiguation`, `should_match`, `claims`, `prior_authorization`, or any other category value, etc.), the words "difficulty tier"/"ground truth"/"distractor", or any `temp_id` string | FAIL — this is the single highest-value automated check, since it directly enforces Template 4's own anti-leakage instruction |
 | Model broke character | Rule | Scan for refusal/meta patterns ("As an AI", "I cannot", "this is a synthetic example") — applies to **every** generated text field across all templates, not just this one | FAIL |
 | Style tags are valid enum values | Rule | Exact match against `Tone`/`LengthBucket`/`NoiseLevel` | FAIL |
 | **Plausibility** | *Not a separate LLM call* — Judge 2 (below) and Template 5 both read this email closely as part of their own task; an implausible/garbled email will surface as low-confidence or incoherent `reasoning` from Template 5, which itself becomes a FLAG (see §5). Not worth a third redundant "is this plausible" call. | | |
@@ -87,11 +87,11 @@ Covers checklist items **#6 (does ground truth actually match)**, **#7 (distract
 | — `easy` | Rule | `email_text` contains an explicit identifier matching the ticket seed (claim number, patient ref, or date of service) | FAIL if missing |
 | — `moderate_paraphrase` | Rule (lexical overlap) | Token/n-gram overlap between `email_text` and the target thread should be *low* — flag if overlap is high enough that it reads as `easy` in disguise | FLAG |
 | — `hard_semantic` | Rule | `email_text` must **not** contain an explicit identifier (regex for claim/patient number patterns) | FAIL if one leaked in |
-| — `hard_negative` | Rule + Judge | Template 5's `should_match` must come back `false`; near-miss ticket's category (issue_type may differ from the target's — that's the point of this tier, only category-level surface similarity is required) should still show up as a `distractor_label` (i.e. genuinely confusable, not obviously unrelated) | FAIL if `should_match=true` (tier failed at its one job); FLAG if not confusable enough |
+| — `hard_negative` | Rule + Judge | Template 5's `should_match` must come back `false`; near-miss ticket's category should still show up as a `distractor_label` (i.e. genuinely confusable at the category/vocabulary level, not obviously unrelated — the underlying issue itself is deliberately different, that's the point of this tier) | FAIL if `should_match=true` (tier failed at its one job); FLAG if not confusable enough |
 | — `boilerplate` | Rule | Low word count (see length bins, §6) but `should_match=true` in the typical case | FLAG if `should_match=false` — spec's intent is low-signal-but-real, not no-match |
-| — `same_customer_disambiguation` | Rule | ≥2 real candidate tickets existed for that customer+category, with semantically similar issue types (see §2 Sibling pairing plausibility), at generation time; Template 5's `distractor_labels` non-empty | FAIL if only one real candidate existed (tier wasn't actually testable) |
+| — `same_customer_disambiguation` | Rule | ≥2 real candidate tickets existed for that customer+category, with genuinely confusable underlying issues (see §2 Sibling pairing plausibility), at generation time; Template 5's `distractor_labels` non-empty | FAIL if only one real candidate existed (tier wasn't actually testable) |
 | Tier disagreement (general) | Compare | Template 4 tier ≠ Template 5 tier, no rule above caught why | FLAG for manual review — this is generation *drift*, not necessarily wrong, but needs a human look |
-| **Distractor realism (#7)** | Rule pre-filter | Distractor ID ≠ correct ticket ID (no self-distraction); distractor belongs to the same customer; for `hard_negative`, distractor's category matches the near-miss category (issue_type may differ); for `same_customer_disambiguation`, distractor's category matches **and** issue_type is semantically similar to the target's | FAIL if any rule pre-filter fails — a structurally-wrong distractor isn't worth judging further |
+| **Distractor realism (#7)** | Rule pre-filter | Distractor ID ≠ correct ticket ID (no self-distraction); distractor belongs to the same customer; for `hard_negative`/`same_customer_disambiguation`, distractor's category matches the near-miss/target category | FAIL if any rule pre-filter fails — a structurally-wrong distractor isn't worth judging further |
 | **Distractor realism (#7), semantic** | **LLM judge (Judge 2)** | Only runs on distractors that passed the rule pre-filter: given the email + the distractor's summary, is this actually a plausible confusion a retrieval system might make, or did Template 5 just pick a nearby ticket arbitrarily? | FLAG if judge says "not actually confusable" |
 
 ## 6. Style-Tag Conformance (#9)
@@ -110,7 +110,7 @@ Action on mismatch: FLAG (style conformance is a realism concern, not a correctn
 
 **Batch-level (statistical, run once per batch, not per item):**
 
-After each generation batch, tally realized `category` / `issue_type` / `status` / `intent_type` / `tone` / `length_bucket` / `noise_level` / `difficulty_tier` frequencies and diff against the spec's target percentages (§2, §3, §4, §5 of `benchmark_dataset_spec.md`). This doesn't fail individual items — it flags the *batch* and tells the orchestrator to bias sampling in the next batch (e.g. "last batch came out 90% `clean` noise, target is 60% — force more `mild`/`heavy` next round").
+After each generation batch, tally realized `category` / `status` / `intent_type` / `tone` / `length_bucket` / `noise_level` / `difficulty_tier` frequencies and diff against the spec's target percentages (§2, §3, §4, §5 of `benchmark_dataset_spec.md`). This doesn't fail individual items — it flags the *batch* and tells the orchestrator to bias sampling in the next batch (e.g. "last batch came out 90% `clean` noise, target is 60% — force more `mild`/`heavy` next round").
 
 ---
 
@@ -126,7 +126,8 @@ Runs once per ticket, after Templates 2+3 both exist, only on items that passed 
 You are a QA reviewer for a synthetic RCM support-ticket benchmark. Review
 the ticket seed and its full message thread together.
 
-Ticket seed (includes category and issue_type):
+Ticket seed (category + free-text core_issue_summary/distinguishing_details
+— no issue_type field, the real production system has no such concept):
 {{TICKET_SEED_JSON}}
 
 Message thread:
@@ -139,10 +140,10 @@ category:
 {{/IF}}
 
 Answer:
-1. Category & issue_type fit: given category "{{CATEGORY}}" and issue_type
-   "{{ISSUE_TYPE}}", would an RCM billing expert file this under that exact
-   category and issue_type, or does it actually belong under a different
-   one (same or different category)? If different, name which.
+1. Category fit: given category "{{CATEGORY}}" and the issue described in
+   core_issue_summary/procedure_description, would an RCM billing expert
+   file this under that category, or does it actually belong under a
+   different one? If different, name which.
 2. Logical flow: reading top to bottom, does each message make sense given
    what came before? Flag any contradiction (e.g. a fact — claim number,
    patient, payer, amount — changing between messages without explanation).
@@ -150,18 +151,15 @@ Answer:
    its labeled intent_type, or is any message mislabeled (e.g. tagged
    thank_you but actually raises a new issue)?
 4. Sibling pairing plausibility (only answer if a sibling seed is given
-   above, otherwise output null): is this ticket's issue_type genuinely
-   plausible to confuse with the sibling's in production — similar enough
-   that an AM could realistically mix them up (e.g. claim_denial vs.
-   claim_rejection_clearinghouse) — or too dissimilar despite sharing a
-   category (e.g. claim_denial vs. documentation_request_from_payer)?
+   above, otherwise output null): is this ticket's underlying issue
+   genuinely plausible to confuse with the sibling's in production —
+   similar enough that an AM could realistically mix them up — or too
+   dissimilar despite sharing a category?
 
 Output ONLY a JSON object, no other text:
 {
   "category_consistent": true | false,
   "suggested_category": "<enum value, or null if consistent>",
-  "issue_type_consistent": true | false,
-  "suggested_issue_type": "<enum value, or null if consistent>",
   "sibling_pairing_plausible": true | false | null,
   "flow_issues": ["<description>", ...],   // empty array if none
   "intent_mismatches": [{"message_index": <int>, "labeled_intent": "<...>", "issue": "<...>"}],
@@ -172,7 +170,7 @@ Output ONLY a JSON object, no other text:
 
 ### Judge 2 — Distractor Realism
 
-Runs only on distractors that already passed the rule pre-filter in §5 (same customer, not self, category/issue_type-plausible per tier).
+Runs only on distractors that already passed the rule pre-filter in §5 (same customer, not self, category-plausible per tier).
 
 ```
 You are a QA reviewer checking whether a benchmark distractor is realistic.
@@ -188,9 +186,8 @@ Candidate distractor ticket (flagged as a plausible-but-wrong match):
 
 Would a retrieval system relying on textual/semantic similarity plausibly
 confuse the distractor for the correct answer here — i.e. is this a
-realistic near-miss, or is it only nominally similar (same category, or
-even same/similar issue_type, label) with nothing in the actual content
-that would cause confusion?
+realistic near-miss, or is it only nominally similar (same category label)
+with nothing in the actual content that would cause confusion?
 
 Output ONLY a JSON object, no other text:
 {
@@ -206,8 +203,8 @@ Output ONLY a JSON object, no other text:
 
 | # | Requested check | Covered by |
 |---|---|---|
-| 1 | Assigned category and issue_type valid | §2 rule table |
-| 2 | Issue type consistent with category | §2 rule table (issue_type belongs to assigned category) + Judge 1 (category & issue_type fit question) |
+| 1 | Assigned category valid | §2 rule table |
+| 2 | Issue type consistent with category | §2 Judge 1 (category fit question) — no separate `issue_type` field exists to validate; this check is purely "does the free-text issue actually belong to this category" |
 | 3 | Conversation flows logically | §3 rule table + Judge 1 |
 | 4 | Sender types alternate correctly | §3 rule table (alternation-degeneracy + closed-ticket shape) |
 | 5 | Eval query plausible | §4 rule table (leakage/degeneracy scan); deep plausibility folded into Judge 2 / Template 5's own read, not a separate call |

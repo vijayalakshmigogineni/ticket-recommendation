@@ -1,0 +1,71 @@
+{
+  "note": "Deterministic assignment plan (docs/execution_roadmap.md Phase 2). Fixed before any generation happened, per generation_prompts.md's rule that category/status/difficulty/style must be orchestrator-assigned, never left to the generating model. Schema reflects the production-alignment correction: 6 categories, 6 status values, no issue_type field anywhere. (A 7th category, patient_calling, briefly existed during this session's schema work and was tested at 0 tickets here -- since removed entirely: confirmed with the user it's being phased out of production, not just irrelevant to an email-driven benchmark.)",
+  "customers": [
+    {"temp_id": "cust_1", "name": "Sunrise Family Medicine"},
+    {"temp_id": "cust_2", "name": "Crescent Orthopedic Associates"},
+    {"temp_id": "cust_3", "name": "Lakeview Pain & Spine Center", "note": "disambiguation-tier customer: tkt_3_1/tkt_3_2 are the same-category sibling pair"},
+    {"temp_id": "cust_4", "name": "Northgate Pediatrics"},
+    {"temp_id": "cust_5", "name": "Harborview Behavioral Health"}
+  ],
+  "tickets": [
+    {"temp_id": "tkt_1_1", "customer": "cust_1", "category": "claims", "status": "OPEN", "message_count": 4},
+    {"temp_id": "tkt_1_2", "customer": "cust_1", "category": "payment_posting", "status": "IN_PROGRESS", "message_count": 6},
+    {"temp_id": "tkt_1_3", "customer": "cust_1", "category": "prior_authorization", "status": "RESOLVED", "message_count": 5},
+    {"temp_id": "tkt_1_4", "customer": "cust_1", "category": "eligibility", "status": "PENDING", "message_count": 3},
+    {"temp_id": "tkt_1_5", "customer": "cust_1", "category": "claims", "status": "CLOSED", "message_count": 7},
+
+    {"temp_id": "tkt_2_1", "customer": "cust_2", "category": "payment_posting", "status": "OPEN", "message_count": 5},
+    {"temp_id": "tkt_2_2", "customer": "cust_2", "category": "accounts_receivable", "status": "WAITING_FOR_CLIENT", "message_count": 4},
+    {"temp_id": "tkt_2_3", "customer": "cust_2", "category": "charge_entry", "status": "IN_PROGRESS", "message_count": 8},
+    {"temp_id": "tkt_2_4", "customer": "cust_2", "category": "claims", "status": "RESOLVED", "message_count": 3},
+    {"temp_id": "tkt_2_5", "customer": "cust_2", "category": "prior_authorization", "status": "OPEN", "message_count": 5},
+
+    {"temp_id": "tkt_3_1", "customer": "cust_3", "category": "claims", "status": "OPEN", "message_count": 5, "disambiguation_sibling": "tkt_3_2"},
+    {"temp_id": "tkt_3_2", "customer": "cust_3", "category": "claims", "status": "OPEN", "message_count": 4, "disambiguation_sibling": "tkt_3_1"},
+    {"temp_id": "tkt_3_3", "customer": "cust_3", "category": "payment_posting", "status": "IN_PROGRESS", "message_count": 6},
+    {"temp_id": "tkt_3_4", "customer": "cust_3", "category": "accounts_receivable", "status": "CLOSED", "message_count": 9},
+    {"temp_id": "tkt_3_5", "customer": "cust_3", "category": "eligibility", "status": "OPEN", "message_count": 3},
+    {"temp_id": "tkt_3_6", "customer": "cust_3", "category": "prior_authorization", "status": "CLOSED", "message_count": 4},
+
+    {"temp_id": "tkt_4_1", "customer": "cust_4", "category": "charge_entry", "status": "PENDING", "message_count": 2},
+    {"temp_id": "tkt_4_2", "customer": "cust_4", "category": "payment_posting", "status": "OPEN", "message_count": 5},
+    {"temp_id": "tkt_4_3", "customer": "cust_4", "category": "claims", "status": "IN_PROGRESS", "message_count": 6},
+    {"temp_id": "tkt_4_4", "customer": "cust_4", "category": "accounts_receivable", "status": "RESOLVED", "message_count": 4},
+
+    {"temp_id": "tkt_5_1", "customer": "cust_5", "category": "eligibility", "status": "OPEN", "message_count": 3},
+    {"temp_id": "tkt_5_2", "customer": "cust_5", "category": "claims", "status": "CLOSED", "message_count": 6},
+    {"temp_id": "tkt_5_3", "customer": "cust_5", "category": "charge_entry", "status": "WAITING_FOR_CLIENT", "message_count": 4},
+    {"temp_id": "tkt_5_4", "customer": "cust_5", "category": "prior_authorization", "status": "PENDING", "message_count": 5},
+    {"temp_id": "tkt_5_5", "customer": "cust_5", "category": "payment_posting", "status": "IN_PROGRESS", "message_count": 12}
+  ],
+  "category_tally": {"claims": 7, "payment_posting": 5, "prior_authorization": 4, "accounts_receivable": 3, "eligibility": 3, "charge_entry": 3},
+  "status_tally": {"non_terminal": 18, "terminal": 7, "note": "72%/28%, close to spec's 65/35 target at pilot scale"},
+  "eval_queries": [
+    {"temp_id": "q_1", "tier": "easy", "customer": "cust_1", "target_ticket": "tkt_1_1"},
+    {"temp_id": "q_2", "tier": "easy", "customer": "cust_2", "target_ticket": "tkt_2_1"},
+    {"temp_id": "q_3", "tier": "easy", "customer": "cust_5", "target_ticket": "tkt_5_1"},
+
+    {"temp_id": "q_4", "tier": "moderate_paraphrase", "customer": "cust_1", "target_ticket": "tkt_1_2"},
+    {"temp_id": "q_5", "tier": "moderate_paraphrase", "customer": "cust_2", "target_ticket": "tkt_2_5"},
+    {"temp_id": "q_6", "tier": "moderate_paraphrase", "customer": "cust_4", "target_ticket": "tkt_4_2"},
+    {"temp_id": "q_7", "tier": "moderate_paraphrase", "customer": "cust_3", "target_ticket": "tkt_3_3"},
+
+    {"temp_id": "q_8", "tier": "hard_semantic", "customer": "cust_2", "target_ticket": "tkt_2_3"},
+    {"temp_id": "q_9", "tier": "hard_semantic", "customer": "cust_4", "target_ticket": "tkt_4_3"},
+    {"temp_id": "q_10", "tier": "hard_semantic", "customer": "cust_5", "target_ticket": "tkt_5_4"},
+    {"temp_id": "q_11", "tier": "hard_semantic", "customer": "cust_3", "target_ticket": "tkt_3_5"},
+
+    {"temp_id": "q_12", "tier": "hard_negative", "customer": "cust_1", "near_miss_ticket": "tkt_1_1", "should_match": false},
+    {"temp_id": "q_13", "tier": "hard_negative", "customer": "cust_5", "near_miss_ticket": "tkt_5_5", "should_match": false},
+    {"temp_id": "q_14", "tier": "hard_negative", "customer": "cust_3", "near_miss_ticket": "tkt_3_1", "should_match": false},
+
+    {"temp_id": "q_15", "tier": "boilerplate", "customer": "cust_2", "target_ticket": "tkt_2_1"},
+    {"temp_id": "q_16", "tier": "boilerplate", "customer": "cust_4", "target_ticket": "tkt_4_2"},
+    {"temp_id": "q_17", "tier": "boilerplate", "customer": "cust_5", "target_ticket": "tkt_5_1"},
+
+    {"temp_id": "q_18", "tier": "same_customer_disambiguation", "customer": "cust_3", "candidates": ["tkt_3_1", "tkt_3_2"], "target_ticket": "tkt_3_1"},
+    {"temp_id": "q_19", "tier": "same_customer_disambiguation", "customer": "cust_3", "candidates": ["tkt_3_1", "tkt_3_2"], "target_ticket": "tkt_3_2"},
+    {"temp_id": "q_20", "tier": "same_customer_disambiguation", "customer": "cust_3", "candidates": ["tkt_3_1", "tkt_3_2"], "target_ticket": "tkt_3_1"}
+  ],
+  "tier_tally": {"easy": 3, "moderate_paraphrase": 4, "hard_semantic": 4, "hard_negative": 3, "boilerplate": 3, "same_customer_disambiguation": 3}
+}

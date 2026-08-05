@@ -1,0 +1,88 @@
+{
+  "note": "Restructured after the production-schema audit found specialty/practice_size/primary_payers/pm_ehr_system/contacts don't exist on the real `clients` table (client_id, name, inbox_email, account_manager_id, is_active, created_at, updated_at). Every customer record below is split into production_fields (persists to app/models.py Customer -- name + inbox_email only) and generation_metadata (used to write realistic, internally-consistent tickets/conversations, then discarded -- never queried after generation). Individual staff contact addresses (in generation_metadata.contacts) DO appear as real Message.sender_email values -- they're just not backed by a separate persisted roster table, mirroring how the real system has no 'known contacts' table either, only interaction.payload.from_email varying per message.",
+  "customers": [
+    {
+      "temp_id": "cust_1",
+      "production_fields": {
+        "name": "Sunrise Family Medicine",
+        "inbox_email": "billing@sunrisefammed.com"
+      },
+      "generation_metadata": {
+        "specialty": "family medicine",
+        "practice_size": "small_group",
+        "primary_payers": ["Medicare", "Aetna", "BCBS"],
+        "pm_ehr_system": "Athenahealth",
+        "contacts": [
+          {"name": "Denise Carter", "role": "billing coordinator", "email": "denise.carter@sunrisefammed.com"},
+          {"name": "Marcus Webb", "role": "office manager", "email": "marcus.webb@sunrisefammed.com"}
+        ]
+      }
+    },
+    {
+      "temp_id": "cust_2",
+      "production_fields": {
+        "name": "Crescent Orthopedic Associates",
+        "inbox_email": "billing@crescentortho.com"
+      },
+      "generation_metadata": {
+        "specialty": "orthopedics",
+        "practice_size": "multi_location",
+        "primary_payers": ["UnitedHealthcare", "Cigna", "Medicare"],
+        "pm_ehr_system": "AdvancedMD",
+        "contacts": [
+          {"name": "Priya Shah", "role": "billing coordinator", "email": "priya.shah@crescentortho.com"},
+          {"name": "Tom Reilly", "role": "practice administrator", "email": "tom.reilly@crescentortho.com"}
+        ]
+      }
+    },
+    {
+      "temp_id": "cust_3",
+      "production_fields": {
+        "name": "Lakeview Pain & Spine Center",
+        "inbox_email": "billing@lakeviewpain.com"
+      },
+      "generation_metadata": {
+        "specialty": "pain management",
+        "practice_size": "small_group",
+        "primary_payers": ["Aetna", "Medicare", "Workers' Comp"],
+        "pm_ehr_system": "Kareo",
+        "contacts": [
+          {"name": "Angela Ruiz", "role": "billing coordinator", "email": "angela.ruiz@lakeviewpain.com"}
+        ]
+      }
+    },
+    {
+      "temp_id": "cust_4",
+      "production_fields": {
+        "name": "Northgate Pediatrics",
+        "inbox_email": "billing@northgatepeds.com"
+      },
+      "generation_metadata": {
+        "specialty": "pediatrics",
+        "practice_size": "solo",
+        "primary_payers": ["Medicaid", "BCBS"],
+        "pm_ehr_system": "eClinicalWorks",
+        "contacts": [
+          {"name": "Sarah Kim", "role": "office manager", "email": "sarah.kim@northgatepeds.com"}
+        ]
+      }
+    },
+    {
+      "temp_id": "cust_5",
+      "production_fields": {
+        "name": "Harborview Behavioral Health",
+        "inbox_email": "billing@harborviewbh.com"
+      },
+      "generation_metadata": {
+        "specialty": "behavioral health",
+        "practice_size": "small_group",
+        "primary_payers": ["Medicare", "Medicaid", "Cigna"],
+        "pm_ehr_system": "NextGen",
+        "contacts": [
+          {"name": "James Okafor", "role": "billing coordinator", "email": "james.okafor@harborviewbh.com"},
+          {"name": "Linda Choi", "role": "practice administrator", "email": "linda.choi@harborviewbh.com"}
+        ]
+      }
+    }
+  ]
+}

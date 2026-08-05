@@ -1,0 +1,40 @@
+database:
+  url: "postgresql+psycopg2://postgres:postgres@localhost:5433/rcm_tickets"
+
+ollama:
+  host: "http://localhost:11434"
+  embedding_model: "nomic-embed-text"   # swap to bge-m3 / mxbai-embed-large later; see EMBEDDING_MODEL_REGISTRY
+  llm_model: "qwen3:4b"
+  request_timeout_s: 60.0
+
+retrieval:
+  keyword_top_n: 50
+  ann_top_n: 100
+  fusion_top_n: 100
+  rrf_k: 60
+
+aggregation:
+  top_m_candidates: 20
+  top_k_for_avg: 3
+  weight_max: 0.5
+  weight_topk_avg: 0.3
+  weight_recency: 0.2
+  recency_half_life_days: 14.0
+
+context_builder:
+  neighbors_before: 1
+  neighbors_after: 1
+  max_matched_interactions_per_ticket: 2
+
+reranker:
+  model_name: "BAAI/bge-reranker-base"
+  device: "cpu"
+  top_k: 3
+
+decision:
+  model: "qwen3:4b"
+  temperature: 0.0
+  timeout_s: 180.0
+
+thread_detection:
+  enabled: true

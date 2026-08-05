@@ -10,7 +10,6 @@ from app.database import Base
 from app.enums import (
     DifficultyTier,
     LengthBucket,
-    MessageIntent,
     NoiseLevel,
     SenderType,
     TicketCategory,
@@ -20,31 +19,38 @@ from app.enums import (
 
 
 class Customer(Base):
+    """Maps to the real production system's `clients` table: name +
+    inbox_email are real, persisted fields. There is no separate
+    "known contacts" table in production -- individual staff addresses
+    vary per message (see Message.sender_email) but aren't tracked as a
+    first-class roster; only the client's own inbox_email is a real,
+    unique, persisted anchor.
+
+    Lookup direction (confirmed): every client sends TO the same shared
+    RCM mailbox (our Graph-monitored intake address -- the same one
+    Message.sender_email uses for account_manager replies), so the
+    recipient address carries no distinguishing information at all.
+    Customer identification is performed on the SENDER side instead --
+    matching an incoming email's From address against this customer's
+    inbox_email. inbox_email is the client's own recognizable address,
+    not a per-client mailbox we host for them to send into.
+
+    See docs/generation_prompts.md Template 1 for the generation-only
+    customer profile fields (specialty, practice_size, primary_payers,
+    pm_ehr_system, contacts) that never reach this table.
+    """
+
     __tablename__ = "customers"
+    __table_args__ = (UniqueConstraint("inbox_email"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(nullable=False)
+    inbox_email: Mapped[str] = mapped_column(nullable=False)
     created_at: Mapped[datetime.datetime] = mapped_column(
         default=datetime.datetime.utcnow
     )
 
-    emails: Mapped[list["CustomerEmail"]] = relationship(back_populates="customer")
     tickets: Mapped[list["Ticket"]] = relationship(back_populates="customer")
-
-
-class CustomerEmail(Base):
-    """Known sender addresses for a customer. This is the lookup table the
-    retrieval pipeline uses to identify which customer an incoming email
-    belongs to, before any embedding/search happens."""
-
-    __tablename__ = "customer_emails"
-    __table_args__ = (UniqueConstraint("email_address"),)
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-    customer_id: Mapped[int] = mapped_column(ForeignKey("customers.id"), index=True)
-    email_address: Mapped[str] = mapped_column(nullable=False)
-
-    customer: Mapped["Customer"] = relationship(back_populates="emails")
 
 
 class Ticket(Base):
@@ -52,7 +58,10 @@ class Ticket(Base):
     __table_args__ = (
         # The retrieval pipeline's first real query is always "this
         # customer's open tickets" -- this composite index is what makes
-        # that filter cheap.
+        # that filter cheap. "Open" means non-terminal status (see
+        # TERMINAL_TICKET_STATUSES in app/enums.py), not literally
+        # status == OPEN -- IN_PROGRESS/PENDING/WAITING_FOR_CLIENT tickets
+        # are still live and re-matchable.
         Index("ix_tickets_customer_status", "customer_id", "status"),
     )
 
@@ -85,20 +94,20 @@ class Message(Base):
     sender_type: Mapped[SenderType] = mapped_column(nullable=False)
     sender_email: Mapped[str] = mapped_column(nullable=False)
     body_text: Mapped[str] = mapped_column(Text, nullable=False)
-    intent_type: Mapped[MessageIntent] = mapped_column(nullable=False)
     created_at: Mapped[datetime.datetime] = mapped_column(
         default=datetime.datetime.utcnow
     )
 
-    # Structured RCM identifiers, reserved for future hybrid (exact-match +
-    # semantic) retrieval. Not used by the baseline embedding pipeline.
-    claim_number: Mapped[str | None] = mapped_column(nullable=True)
-    patient_id: Mapped[str | None] = mapped_column(nullable=True)
-    payer: Mapped[str | None] = mapped_column(nullable=True)
-    date_of_service: Mapped[datetime.date | None] = mapped_column(nullable=True)
-
     # No embedding column yet -- deliberately deferred until Phase 3/4 once
     # an embedding model (and therefore vector dimension) is chosen.
+    #
+    # No intent_type / claim_number / patient_id / payer / date_of_service
+    # columns: the real production system has no matching fields (message
+    # intent isn't tracked at all; structured claim/patient facts, if
+    # captured, live inside an unstructured payload blob, not typed
+    # columns). These remain generation-time-only concerns -- used to keep
+    # synthetic threads realistic and internally consistent while writing
+    # body_text -- not persisted here.
 
     ticket: Mapped["Ticket"] = relationship(back_populates="messages")
 

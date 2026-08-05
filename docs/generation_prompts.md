@@ -32,11 +32,13 @@ The "orchestrator" is a human during the manual pilot and a script during automa
 
 ## Template 1 — Customer Generation
 
-**Persisted fields:** `Customer.name`, `CustomerEmail.email_address` (one row per contact). Everything else (specialty, size, payers, PM/EHR system) is *generation context* carried forward into Templates 2–4 to keep facts consistent per customer — it doesn't need its own DB column yet.
+**Persisted fields:** `Customer.name`, `Customer.inbox_email` — matches the real production system's `clients` table (`name`, `inbox_email`, plus `account_manager_id`/`is_active` which we don't model, see app/models.py's `Customer` docstring). There is no separate "known contacts" table in production, so there isn't one here either. Everything else (specialty, size, payers, PM/EHR system, individual staff contacts) is **generation metadata** — used to keep Templates 2–4 realistic and internally consistent, then discarded. It never becomes a DB column, the same way `IssueType` and `Message.intent_type` don't (see Templates 2–3).
+
+**Lookup direction (confirmed):** every client sends *to* the same shared RCM mailbox (the account-manager alias used in Template 3) — the recipient address is identical for every customer and carries no distinguishing information. Customer identification is done on the **sender** side: matching an incoming email's From address against this customer's `inbox_email`. `inbox_email` is the client's own recognizable address, not a mailbox we host for them to send into — see `app/models.py`'s `Customer` docstring and `PROJECT_PLAN.md`'s resolved "customer-lookup mechanism" note.
 
 **Orchestrator supplies:** batch size `N`; optionally a list of specialties/names already used in prior batches (diversity guard).
 
-**Model outputs:** array of customer profiles.
+**Model outputs:** array of customer profiles, each split into `production_fields` (persisted) and `generation_metadata` (discarded after generation) — this split is structural, not just a naming convention, so an ingestion script can read `production_fields` directly without needing to know which other keys to ignore.
 
 ```
 You are generating synthetic customer profiles for a benchmark dataset. These
@@ -58,25 +60,43 @@ Vary across the batch:
 
 Do not reuse any of these already-generated names/specialties: {{AVOID_LIST}}
 
-Each practice has 1-3 named human contacts who would realistically email an
-RCM vendor about billing issues (billing coordinator, office manager,
-practice administrator, sometimes the physician directly for smaller
-practices). Give each contact a plausible name, role, and email address
-using the practice's own invented domain (not @gmail.com etc, unless it's a
-deliberately small/informal solo practice).
+Each practice needs ONE inbox_email (e.g. "billing@practicename.com") — this
+is the one real, persisted identifying address for the customer. It's the
+practice's own recognizable address (should read as a shared/group inbox on
+their side, not a named individual's address) — NOT a mailbox we host for
+them to send into. Every practice actually sends to the same shared RCM
+intake address (the account-manager alias in Template 3); inbox_email is
+instead what production matches against the *sender* of an incoming email
+to figure out which client it's from.
+
+Separately, each practice also has 1-3 named human contacts who would
+realistically email an RCM vendor about billing issues (billing coordinator,
+office manager, practice administrator, sometimes the physician directly for
+smaller practices) — these are generation-only, used to vary who writes each
+message in Template 3, mirroring how real individual staff addresses appear
+in message traffic without being tracked in any formal roster. Give each
+contact a plausible name, role, and email address using the practice's own
+invented domain — same domain as inbox_email (so a domain-level match would
+recognize them too), different local part (not @gmail.com etc, unless it's
+a deliberately small/informal solo practice).
 
 Output ONLY a JSON array, no other text:
 [
   {
     "temp_id": "cust_1",
-    "name": "<practice name>",
-    "specialty": "<specialty>",
-    "practice_size": "solo" | "small_group" | "multi_location",
-    "primary_payers": ["<payer>", ...],
-    "pm_ehr_system": "<system name>",
-    "contacts": [
-      {"name": "<full name>", "role": "<role>", "email": "<email>"}
-    ]
+    "production_fields": {
+      "name": "<practice name>",
+      "inbox_email": "<shared/group inbox address>"
+    },
+    "generation_metadata": {
+      "specialty": "<specialty>",
+      "practice_size": "solo" | "small_group" | "multi_location",
+      "primary_payers": ["<payer>", ...],
+      "pm_ehr_system": "<system name>",
+      "contacts": [
+        {"name": "<full name>", "role": "<role>", "email": "<email>"}
+      ]
+    }
   }
 ]
 ```
@@ -87,11 +107,13 @@ Output ONLY a JSON array, no other text:
 
 Produces the *grounding facts* for a ticket, not the conversation itself. This seed is the source of truth that Template 3 (conversation) and Template 4 (eval query) both draw on, so a ticket stays internally consistent across the thread and any later query that references it.
 
-**Persisted fields:** `Ticket.subject`, `category`, `status`, (`created_at`/`closed_at` derived from the day-offsets). `claim_number`, `patient_id`, `payer`, `date_of_service` map directly onto the *reserved* `Message` columns of the same name (spec note: schema keeps these at message level, reserved for future hybrid retrieval — so the seed's facts get echoed onto the relevant message(s) in Template 3, not stored separately on the ticket).
+**No `issue_type` field.** An earlier version of this template had one — confirmed the real production ticketing system has no such concept, category is the only classification axis on a ticket, so it was removed from the schema entirely (`app/enums.py`/`app/models.py`), not just left unpersisted. Scenario specificity now comes from the category-grounding prose below (inspiration, not a field to fill in) plus the seed's own free-text `core_issue_summary`/`distinguishing_details`.
 
-**Orchestrator supplies:** the customer profile from Template 1; a list of `(category, issue_type, status)` assignments — one per ticket to generate, already sampled to hit the spec's category floor (min 20/category at full scale) and ~65/35 open/closed split; for customers targeted for the disambiguation tier, the *other* same-category (similar-issue-type) ticket seed(s) already generated for that customer, so the new one is instructed to be genuinely distinct but surface-similar.
+**Persisted fields:** `Ticket.subject`, `category`, `status`, `created_at`/`closed_at` (derived from the day-offsets) — all under `production_fields` below. `core_issue_summary`, `distinguishing_details`, `claim_number`, `patient_id`, `payer`, `date_of_service`, `procedure_description` are **generation metadata**: the real production system has no matching structured columns (if captured at all, this kind of detail lives inside an unstructured payload blob, not typed fields — see `app/models.py`'s `Message` docstring), so none of it persists past generation. It exists only to keep `core_issue_summary`, the conversation (Template 3), and any later eval query (Template 4) referencing this ticket internally consistent with each other.
 
-**Model outputs:** array of ticket seeds, one per assignment.
+**Orchestrator supplies:** the customer profile from Template 1; a list of `(category, status)` assignments — one per ticket to generate, already sampled to hit the spec's category floor (min 20/category at full scale) and ~65/35 open/closed split; for customers targeted for the disambiguation tier, the *other* same-category ticket seed(s) already generated for that customer, so the new one is instructed to be genuinely distinct but surface-similar.
+
+**Model outputs:** array of ticket seeds, one per assignment, each split into `production_fields` (persisted) and `generation_metadata` (discarded after generation).
 
 ```
 You are generating synthetic RCM (Revenue Cycle Management) ticket scenarios
@@ -103,70 +125,83 @@ Generate {{M}} ticket scenarios, one for each assignment below. Each ticket
 represents one real billing/claims issue this practice contacted their RCM
 vendor about.
 
-Assignments (category, issue_type, and status are FIXED — do not change them):
-{{ASSIGNMENT_LIST}}   e.g. [{"temp_id": "tkt_1_1", "category": "claims", "issue_type": "claim_denial", "status": "open"}, ...]
+Assignments (category and status are FIXED — do not change them):
+{{ASSIGNMENT_LIST}}   e.g. [{"temp_id": "tkt_1_1", "category": "claims", "status": "OPEN"}, ...]
 
-Category = which operational team owns this ticket. Issue Type = the
-specific business problem within that team. Use realistic RCM specifics for
-the assigned issue_type, not generic corporate language — issue_type is
-generation/QA metadata only, it must never appear verbatim in client-facing
-text (write around it, don't quote it):
-
-| Category | Issue Types (pick the one assigned) |
-|---|---|
-| claims | claim_denial (specific reason: CO-97 bundled service, CO-16 missing/invalid info, timely filing limit, medical necessity, missing modifier, COB) · missing_modifier · timely_filing · duplicate_claim · medical_necessity · coordination_of_benefits · documentation_request_from_payer (specific doc type: op report, progress notes, medical records, itemized statement) · claim_rejection_clearinghouse · claim_status_inquiry · incorrect_diagnosis_code · corrected_claim_needed |
-| prior_authorization | authorization_denied · authorization_expired · missing_authorization · peer_to_peer_review_required · incomplete_authorization_request · retro_authorization_needed · missing_clinical_documentation · authorization_status_inquiry · wrong_procedure_authorized · auth_renewal_for_ongoing_treatment |
-| payment_posting | underpayment (vs. contracted rate) · overpayment_refund_request · era_eob_discrepancy · payment_posted_to_wrong_account · missing_payment · contractual_adjustment_mismatch · duplicate_payment_posted · unapplied_unidentified_payment · patient_payment_reconciliation · payment_plan_posting_issue |
-| eligibility | coverage_termination · effective_date_discrepancy · plan_payer_change · benefits_verification_needed · ineligible_for_service · coordination_of_benefits_eligibility_stage · supporting_documentation_required · incorrect_member_id_demographic_mismatch · referral_requirement_confirmation |
-| accounts_receivable | aging_balance_follow_up · patient_balance_dispute · write_off_request · payment_plan_setup · collections_escalation · unapplied_credit_resolution · refund_processing_delay · account_reconciliation_request · bad_debt_referral_status |
-| charge_entry | missing_charge · incorrect_cpt_procedure_code · incorrect_units_billed · late_charge_submission · coding_discrepancy · modifier_missing_at_entry · new_provider_charge_setup · charge_template_configuration · incorrect_fee_schedule_applied |
-
-This is the default v1 controlled vocabulary — treat it as closed for
-generation now, extensible later without changing this template's structure.
+Category = which operational team owns this ticket. Use realistic RCM
+specifics for the assigned category, not generic corporate language — vary
+the specific scenario naturally across a batch (this is inspiration for
+realism/diversity, not a field to echo back verbatim):
+- claims: denial reasons (missing modifier, timely filing, medical
+  necessity, coordination of benefits, incorrect diagnosis code),
+  clearinghouse rejections, duplicate submissions, documentation requests
+  from a payer, corrected-claim resubmissions, status inquiries
+- prior_authorization: authorization denied/expired, missing authorization,
+  peer-to-peer review required, incomplete request, retro auth needed,
+  missing clinical documentation, wrong procedure authorized, renewal for
+  ongoing treatment
+- payment_posting: underpayment vs. contracted rate, overpayment/refund
+  request, ERA/EOB discrepancy, payment posted to wrong account, missing
+  payment, contractual adjustment mismatch, duplicate payment, unapplied
+  payment, patient payment reconciliation
+- eligibility: coverage termination, effective date discrepancy, plan/payer
+  change, benefits verification, ineligible for service, coordination of
+  benefits at the eligibility stage, supporting documentation required,
+  incorrect member ID, referral requirement confirmation
+- accounts_receivable: aging balance follow-up, patient balance dispute,
+  write-off request, payment plan setup, collections escalation, unapplied
+  credit resolution, refund processing delay, account reconciliation, bad
+  debt referral status
+- charge_entry: missing charge, incorrect CPT/procedure code, incorrect
+  units billed, late charge submission, coding discrepancy, modifier
+  missing at entry, new provider charge setup, charge template
+  configuration, incorrect fee schedule applied
 
 {{#IF DISAMBIGUATION_SIBLINGS}}
 This customer already has these OTHER open tickets in the SAME category:
 {{SIBLING_SEEDS_JSON}}
-The new ticket(s) below must use an issue_type that is SIMILAR to (not
-necessarily identical to) the sibling's — plausibly confusable, e.g.
-claim_denial + claim_rejection_clearinghouse, or missing_modifier +
-incorrect_diagnosis_code (both denial-adjacent); NOT claim_denial +
-documentation_request_from_payer (not confusable despite same category).
-Beyond that, it must be a genuinely different underlying issue (different
+The new ticket must be a genuinely different underlying issue (different
 patient, different claim, different specific cause) but should plausibly
-use similar surface vocabulary — this pair is used later to test whether a
-retrieval system can tell them apart.
+use similar surface vocabulary to the sibling(s) — e.g. both are denial
+scenarios, both are documentation requests — so an Account Manager skimming
+both tickets could plausibly confuse them. Write `distinguishing_details`
+explicitly stating what makes this one different; plausibility of the pair
+is a judgment call reviewed by Judge 1 (`generation_qa_checklist.md`), not
+enforced by a formal field.
 {{/IF}}
 
 For each assignment, output realistic synthetic grounding facts. Dates are
 expressed as day-offsets from today (negative = days ago); if status is
-"closed", closed_at_offset_days must be a smaller-magnitude (more recent)
-negative number than created_at_offset_days.
+"RESOLVED" or "CLOSED" (terminal), closed_at_offset_days must be a
+smaller-magnitude (more recent) negative number than created_at_offset_days;
+otherwise closed_at_offset_days must be null.
 
 Output ONLY a JSON array, no other text:
 [
   {
     "temp_id": "tkt_1_1",
-    "subject": "<short subject line, as a human would title it>",
-    "category": "<must match the assigned category exactly>",
-    "issue_type": "<must match the assigned issue_type exactly>",
-    "status": "<must match the assigned status exactly>",
-    "core_issue_summary": "<1-3 sentences, internal reference, not client-facing verbatim>",
-    "distinguishing_details": "<what makes this ticket different from any sibling ticket>",
-    "claim_number": "<synthetic>",
-    "patient_id": "<synthetic>",
-    "payer": "<one of the customer's primary_payers, or a plausible other>",
-    "date_of_service": "<YYYY-MM-DD, recent past>",
-    "procedure_description": "<brief, e.g. 'CPT 99214 office visit' or 'MRI lumbar spine'>",
-    "created_at_offset_days": <int>,
-    "closed_at_offset_days": <int or null>
+    "production_fields": {
+      "subject": "<short subject line, as a human would title it>",
+      "category": "<must match the assigned category exactly>",
+      "status": "<must match the assigned status exactly>",
+      "created_at_offset_days": <int>,
+      "closed_at_offset_days": <int or null>
+    },
+    "generation_metadata": {
+      "core_issue_summary": "<1-3 sentences, internal reference, not client-facing verbatim>",
+      "distinguishing_details": "<what makes this ticket different from any sibling ticket>",
+      "claim_number": "<synthetic, or null if not yet applicable>",
+      "patient_id": "<synthetic, or null>",
+      "payer": "<one of the customer's primary_payers, or a plausible other>",
+      "date_of_service": "<YYYY-MM-DD, recent past, or null>",
+      "procedure_description": "<brief, e.g. 'CPT 99214 office visit' or 'MRI lumbar spine'>"
+    }
   }
 ]
 ```
 
 Valid `category` values: `claims`, `prior_authorization`, `payment_posting`, `eligibility`, `accounts_receivable`, `charge_entry`.
-Valid `issue_type` values: see the table above — must belong to the assigned category.
-Valid `status` values: `open`, `closed`.
+Valid `status` values: `OPEN`, `IN_PROGRESS`, `PENDING`, `WAITING_FOR_CLIENT`, `RESOLVED`, `CLOSED` (matches `TicketStatus` in `app/enums.py` exactly — 6 states, not just open/closed; this line previously lagged the enum's expansion from 2 to 6 values, caught while building the generation pipeline).
 
 ---
 
@@ -174,7 +209,7 @@ Valid `status` values: `open`, `closed`.
 
 Realizes a ticket seed into the actual message thread. This is the ticket corpus that eventually gets embedded.
 
-**Persisted fields:** `Message.sender_type`, `sender_email`, `body_text`, `intent_type`, `created_at` (derived from day_offset), plus `claim_number`/`patient_id`/`payer`/`date_of_service` echoed from the seed onto whichever message first states them (usually message 1).
+**Persisted fields:** `Message.sender_type`, `sender_email`, `body_text`, `created_at` (derived from day_offset) — under `production_fields` below. `intent_type` is **generation metadata only**: it has no real column counterpart at all (production tracks `interaction_type`/`direction` — how a message arrived — not why, a different axis), so it exists purely to shape realistic thread structure while writing (see the structural rules below), never persisted. Claim/patient/payer/date-of-service facts from the seed get woven into `body_text` naturally as part of writing realistic messages — they are not separate fields on the message itself (the seed's `generation_metadata` already reserved for future hybrid retrieval, was removed from the schema — see Template 2).
 
 **Orchestrator supplies:** the ticket seed(s) from Template 2; the customer profile (for contact emails + an account-manager alias); a target message count per ticket (sample 2–15, avg ~5, per spec §1); can batch all tickets for one customer in a single call.
 
@@ -192,10 +227,11 @@ Customer profile:
 {{CUSTOMER_PROFILE_JSON}}
 
 Ticket seed(s) — treat each independently, do not let details bleed across
-tickets. Each seed's issue_type is available context (not to be quoted
-verbatim) and should inform message specifics — e.g. a
-missing_clinical_documentation Prior Authorization ticket should read
-differently than an authorization_expired one:
+tickets. Each seed's generation_metadata (core_issue_summary,
+distinguishing_details, claim/patient/payer/date-of-service facts) is
+available context, not to be quoted verbatim, and should inform message
+specifics so two tickets in the same category still read distinctly from
+each other:
 {{TICKET_SEEDS_JSON}}
 
 For each ticket, generate exactly {{MESSAGE_COUNT}} messages (this count is
@@ -215,10 +251,10 @@ independent random draw per message:
 3. Near the end of the thread, a thank_you (~10%) or informational (~7%)
    message MAY appear (not mandatory) — these should cluster at the end,
    never at the start.
-4. If the ticket's status is "closed", the last 1-2 messages should read as
-   resolution (account_manager confirms resolution, client sends thank_you),
-   and the final message's day_offset should be at/before the ticket's
-   closed_at_offset_days.
+4. If the ticket's status is "RESOLVED" or "CLOSED" (terminal), the last 1-2
+   messages should read as resolution (account_manager confirms resolution,
+   client sends thank_you), and the final message's day_offset should be
+   at/before the ticket's closed_at_offset_days.
 5. account_manager messages come from a consistent internal alias, e.g.
    "{{ACCOUNT_MANAGER_ALIAS}}" — same alias across all tickets in this batch.
 6. client messages must use one of this customer's contact emails from the
@@ -236,20 +272,26 @@ Independently vary writing style per message (not tied to thread position):
 day_offset = days since ticket creation (0 = created_at). Must be
 non-decreasing across the thread.
 
-Output ONLY a JSON array, no other text:
+Output ONLY a JSON array, no other text — each message split into
+production_fields (persisted) and generation_metadata (discarded after
+generation, same convention as Templates 1–2):
 [
   {
     "ticket_temp_id": "tkt_1_1",
     "messages": [
       {
-        "sender_type": "client" | "account_manager",
-        "sender_email": "<must match a contact/alias given above>",
-        "intent_type": "initial_request" | "follow_up" | "status_check" | "documentation_provided" | "thank_you" | "informational",
-        "tone": "professional" | "casual",
-        "length_bucket": "short" | "medium" | "long",
-        "noise_level": "clean" | "mild" | "heavy",
-        "day_offset": <int>,
-        "body_text": "<the actual email/message text>"
+        "production_fields": {
+          "sender_type": "client" | "account_manager",
+          "sender_email": "<must match a contact/alias given above>",
+          "day_offset": <int>,
+          "body_text": "<the actual email/message text>"
+        },
+        "generation_metadata": {
+          "intent_type": "initial_request" | "follow_up" | "status_check" | "documentation_provided" | "thank_you" | "informational",
+          "tone": "professional" | "casual",
+          "length_bucket": "short" | "medium" | "long",
+          "noise_level": "clean" | "mild" | "heavy"
+        }
       }
     ]
   }
@@ -283,9 +325,9 @@ history, no "Re:"-style continuation implied) — since it models Case 2B: a
 client message that broke automatic email threading and now requires the
 AM to check it against open tickets (see Business Workflow in the spec).
 You are NOT the retrieval system and you must NOT reveal or hint at any
-internal labels (category name, issue_type, difficulty tier, ticket ID,
-"this is a test", etc.) — write exactly as a real client would, who has no
-idea their message will be scored.
+internal labels (category name, difficulty tier, ticket ID, "this is a
+test", etc.) — write exactly as a real client would, who has no idea their
+message will be scored.
 
 Customer profile: {{CUSTOMER_PROFILE_JSON}}
 
@@ -342,7 +384,7 @@ This is deliberately a **separate, blind pass** — it does not see the orchestr
 
 **Persisted fields:** all of `EvalQuery`'s remaining fields — `correct_ticket_id`, `should_match`, `difficulty_tier`, `distractor_ticket_ids`, `reasoning`.
 
-**Orchestrator supplies:** the email text from Template 4; the customer's full candidate pool — every OPEN ticket for that customer, as short summaries only (subject + category + issue_type + brief description — **not** the full thread, matching what the real pipeline's retrieval scope would see), presented in **randomized order with anonymized labels** (`A`, `B`, `C`, not real ticket IDs, to avoid position/ID bias) — mapped back to real temp_ids only after the model responds. `issue_type` is the signal the judge needs to tell genuinely-hard disambiguation pairs (same category, similar issue types) apart from easy ones (same category, unrelated issue types).
+**Orchestrator supplies:** the email text from Template 4; the customer's full candidate pool — every OPEN ticket for that customer, as short summaries only (subject + category + brief description — **not** the full thread, matching what the real pipeline's retrieval scope would see), presented in **randomized order with anonymized labels** (`A`, `B`, `C`, not real ticket IDs, to avoid position/ID bias) — mapped back to real temp_ids only after the model responds. Since there's no `issue_type` field, the judge tells genuinely-hard disambiguation pairs apart from easy ones using each candidate's `brief_description` (drawn from the ticket seed's `core_issue_summary`/`distinguishing_details`) — same signal, carried by free text instead of an enum.
 
 ```
 You are a QA judge for a support-ticket retrieval benchmark. You will be
@@ -355,7 +397,7 @@ Incoming email:
 
 Candidate open tickets for this customer (order is randomized, labels are
 arbitrary):
-{{CANDIDATE_TICKETS_JSON}}   -- e.g. [{"label": "A", "subject": "...", "category": "...", "issue_type": "...", "brief_description": "..."}, ...]
+{{CANDIDATE_TICKETS_JSON}}   -- e.g. [{"label": "A", "subject": "...", "category": "...", "brief_description": "..."}, ...]
 
 Decide:
 1. Does this email genuinely refer to one of the candidate tickets, or is it

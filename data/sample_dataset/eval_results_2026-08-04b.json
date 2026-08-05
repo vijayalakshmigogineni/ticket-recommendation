@@ -1,0 +1,1076 @@
+{
+  "generated_at": "2026-08-04T09:07:21.895810+00:00",
+  "model_info": {
+    "decision_model": {
+      "model": "qwen3:4b",
+      "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "modified_at": "2026-07-28T01:06:42.3067965+05:30",
+      "size_bytes": 2497293931,
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "family": "qwen3"
+    },
+    "embedding_model": {
+      "model": "nomic-embed-text",
+      "parameter_size": "137M",
+      "quantization_level": "F16",
+      "family": "nomic-bert"
+    }
+  },
+  "results": [
+    {
+      "key": "pm1_paraphrase",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM1"
+      ],
+      "actual_ticket_key": "PM1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.996,
+      "explanation": "Incoming email and candidate 1's ticket both describe patient R. Simmons' epidural injection procedure with a claim denial due to missing prior authorization number. The customer explicitly requests resubmission with the auth number, matching candidate 1's exact context (claim #93021, epidural steroid injection, and prior auth approval). No other candidate shares the same patient, procedure, or denial cause.",
+      "elapsed_s": 92.0777734000003
+    },
+    {
+      "key": "pm2_autoattach",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM2"
+      ],
+      "actual_ticket_key": "PM2",
+      "correct": true,
+      "recall20": null,
+      "recall3": null,
+      "path": "auto_attach",
+      "confidence": null,
+      "explanation": null,
+      "elapsed_s": 0.01979280001251027
+    },
+    {
+      "key": "remit_address_reject",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": null,
+      "actual_ticket_key": null,
+      "correct": true,
+      "recall20": null,
+      "recall3": null,
+      "path": "ai_decision",
+      "confidence": 0.0,
+      "explanation": "Incoming email is about updating the practice's remit address (billing office move), while all candidate tickets address specific patient eligibility issues, aging balances, or prior authorization denials. None of the tickets involve remit address updates or payer address coordination. Cross-encoder scores of 0.000 confirm no thematic overlap.",
+      "elapsed_s": 29.28333389997715
+    },
+    {
+      "key": "pm2_pm4_disambiguation",
+      "category": "uncategorized",
+      "difficulty": "hard",
+      "ambiguity_type": "single_answer",
+      "expected_ticket_keys": [
+        "PM4"
+      ],
+      "actual_ticket_key": "PM4",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.994,
+      "explanation": "Incoming email explicitly describes a prior auth denial with 'insufficient conservative treatment documentation' and request for appeal guidance, matching Candidate 1's ticket context (lumbar MRI prior auth denial) exactly. The customer's question about what to submit for appeal aligns with the agent's previous guidance in Candidate 1 (PT notes or NSAID trial). Candidate 2 involves a pending prior auth request, not a denial, and Candidate 3 concerns missing prior authorization numbers, not denial of treatment documentation.",
+      "elapsed_s": 99.83517460001167
+    },
+    {
+      "key": "unknown_customer",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": null,
+      "actual_ticket_key": null,
+      "correct": true,
+      "recall20": null,
+      "recall3": null,
+      "path": "unknown_customer",
+      "confidence": null,
+      "explanation": null,
+      "elapsed_s": 0.003142800007481128
+    },
+    {
+      "key": "pm5_eligibility",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM5"
+      ],
+      "actual_ticket_key": "PM5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.995,
+      "explanation": "Incoming email matches candidate 1's scenario: new patient scheduled for epidural injection with payer portal showing 'plan not found'. Agent previously resolved this as a temporary data sync delay (same issue type and context).",
+      "elapsed_s": 109.23530930001289
+    },
+    {
+      "key": "pm6_ar",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM6"
+      ],
+      "actual_ticket_key": "PM6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.771,
+      "explanation": "Incoming email explicitly asks for status on 'outstanding interventional procedure claims' flagged with United a while back, directly matching candidate 1's context of $9,200 in claims past 90 days with no response. The cross-encoder score (0.771) confirms high similarity, while candidate 2 (payment issue) and candidate 3 (prior auth) are unrelated to aged claims with United.",
+      "elapsed_s": 150.41447970003355
+    },
+    {
+      "key": "pm7_charge_entry",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM7"
+      ],
+      "actual_ticket_key": "PM7",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.998,
+      "explanation": "The incoming email describes a facet injection charge with a CPT code error (billed with imaging guidance add-on but documentation supports without), which exactly matches Candidate 1's customer interaction (CPT 64493 vs 64490). Candidate 2 involves payment discrepancies and bundling adjustments, while Candidate 3 concerns prior authorization for epidural injections\u2014neither matches the CPT code correction issue described.",
+      "elapsed_s": 107.55885490000946
+    },
+    {
+      "key": "cross_customer_c1",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C1"
+      ],
+      "actual_ticket_key": "C1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.967,
+      "explanation": "The incoming email explicitly references 'CO-45 denial' and follows up on confirming the write-off amount before closing books, directly aligning with candidate ticket 1's resolved issue about a CO-45 denial (charge exceeds fee schedule) where the customer confirmed the write-off after the agent explained it's a contractual adjustment requiring write-off. The cross-encoder score of 0.967 confirms strong contextual match, while candidate 2 (small-balance write-offs) and candidate 3 (missing charge entry) are unrelated to claim denials and have 0.000 scores.",
+      "elapsed_s": 51.67277649999596
+    },
+    {
+      "key": "near_dup_p6_p7",
+      "category": "uncategorized",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "P6",
+        "P7"
+      ],
+      "actual_ticket_key": "P6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.85,
+      "explanation": "The incoming email explicitly references 'following up on the bundling adjustment question we sent over recently' to confirm the write-off before closing. This directly matches Candidate 1's context: the customer initially questioned bundling of CPT 99213 (E/M) with 12002 (laceration repair), the agent explained the payer bundled it due to no separate issue, and the customer confirmed they would leave it as posted. The email is a natural follow-up to that same unresolved adjustment question (the 'write-off' refers to the payer's adjustment for the bundled claim), with no indication of new issues. Candidate 2 involves a resolved modifier 25 adjustment and a different clinical scenario (nebulizer), while Candidate 3 is unrelated to bundling. The cross-encoder score (0.122) aligns with this high confidence as the only candidate with identical bundling context.",
+      "elapsed_s": 82.88498860003892
+    },
+    {
+      "key": "three_way_ar",
+      "category": "uncategorized",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "actual_ticket_key": "R6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.914,
+      "explanation": "The incoming email is a check-in on the aged balance follow-up that the team has been working on, which aligns with Candidate 1's context where the team has started working on the Cigna bucket. The cross-encoder score (0.914) is the highest among candidates, indicating strong similarity to the ongoing work described in this ticket.",
+      "elapsed_s": 80.71788369998103
+    },
+    {
+      "key": "c6_missing_identifiers",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C6"
+      ],
+      "actual_ticket_key": "C6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.972,
+      "explanation": "Incoming email directly follows up on the batch of claims denied referenced in candidate 1's ticket (customer mentioned flagging claims earlier this week and checking for progress). The subject, context, and customer identity match exactly, with the cross-encoder score (0.972) confirming high relevance. Candidate 2 and 3 address unrelated issues (single charge correction and eligibility verification).",
+      "elapsed_s": 74.49826229998143
+    },
+    {
+      "key": "a7_false_positive_guard",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A7"
+      ],
+      "actual_ticket_key": "A7",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "The incoming email explicitly references 'nerve study authorization' and asks about 'conservative treatment documentation' being sufficient for the nerve conduction study (CPT 95910), which directly aligns with Candidate 1's context. In this ticket, the customer previously mentioned payer requirements for conservative treatment history (PT and NSAID trial) and the agent confirmed submission led to same-day approval. The email is a natural follow-up to the same authorization process that was resolved in this ticket. Candidate 2 involves coverage verification (unrelated), and Candidate 3 involves ERA payment discrepancies (unrelated). The cross-encoder score (0.179) for Candidate 1 is significantly higher than the others (0.001 and 0.000), confirming this is the genuine match.",
+      "elapsed_s": 55.921266000019386
+    },
+    {
+      "key": "c8_long_running_followup",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C8"
+      ],
+      "actual_ticket_key": "C8",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.981,
+      "explanation": "The email specifically asks about peer-to-peer scheduling for the cataract appeal, matching Candidate 1's active appeal process where the payer has requested a peer-to-peer review and the customer is following up on scheduling it. Candidate 2 (retina appeal) and Candidate 3 (CPT code) are unrelated to the cataract appeal context.",
+      "elapsed_s": 75.2251967000193
+    },
+    {
+      "key": "e6_document_submission",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E6"
+      ],
+      "actual_ticket_key": "E6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.989,
+      "explanation": "Matches Candidate 1: patient submitted new insurance card needing re-verification (incoming email explicitly follows up on insurance card update for verification before visit)",
+      "elapsed_s": 76.63237090001348
+    },
+    {
+      "key": "g6_no_action_confirm",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G6"
+      ],
+      "actual_ticket_key": "G6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.956,
+      "explanation": "Incoming email confirms no action needed on a charge correction (specifically for patient G. Halloran), matching the closed ticket where the customer already corrected a CPT code error and explicitly stated 'no action needed from your team'. The cross-encoder score (0.956) strongly aligns with this context, while Candidate 2 and 3 involve unrelated issues (payment bundling and claim denials).",
+      "elapsed_s": 54.21492999995826
+    },
+    {
+      "key": "g5_charge_units_followup",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G5"
+      ],
+      "actual_ticket_key": "G5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.9,
+      "explanation": "Incoming email specifically asks for an update on fixing the unit count for injection charge (CPT 96372), directly matching Candidate 1's issue where the customer reported a charge entry with 3 units for a claim that only supports 1 injection. The customer is seeking an update on the fix and prevention of recurrence, aligning with the ongoing resolution in Candidate 1's conversation context.",
+      "elapsed_s": 82.09827889996814
+    },
+    {
+      "key": "ggi_no_payment_ticket",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": null,
+      "actual_ticket_key": null,
+      "correct": true,
+      "recall20": null,
+      "recall3": null,
+      "path": "ai_decision",
+      "confidence": 0.0,
+      "explanation": "Incoming email discusses a short payment on a claim (payment amount less than expected), but none of the candidate tickets address this issue. Candidate 1 involves a claim rejection/correction with full payment resolution, while Candidates 2 and 3 focus on aged balances (collection issues) unrelated to short payments. The cross-encoder scores (0.000) further confirm low relevance, and no underlying issue matches.",
+      "elapsed_s": 33.83066969999345
+    },
+    {
+      "key": "a6_escalation",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A6"
+      ],
+      "actual_ticket_key": "A6",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.8,
+      "explanation": "The incoming email explicitly mentions an 'injection authorization' delay that has been ongoing for too long. This directly aligns with Candidate 1's context: Pinehill Ophthalmology is experiencing repeated delays in prior auth for an intravitreal injection (wet AMD) procedure, with the customer frustrated about the extended timeline and requesting escalation. The cross-encoder score (0.052) confirms moderate similarity, while Candidates 2 (cataract surgery) and 3 (CPT code clarification) are unrelated to injection authorization delays. The underlying issue is the same: authorization delays for an ophthalmology injection procedure requiring urgent escalation.",
+      "elapsed_s": 59.4507741999696
+    },
+    {
+      "key": "c1_hard_paraphrase",
+      "category": "uncategorized",
+      "difficulty": "hard",
+      "ambiguity_type": "single_answer",
+      "expected_ticket_keys": [
+        "C1"
+      ],
+      "actual_ticket_key": "C1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.9,
+      "explanation": "Incoming email explicitly references 'contractual pricing adjustment' and 'write-off amount' from a prior adjustment, directly matching Candidate 1's context (CO-45 contractual adjustment requiring write-off as explained by agent). Candidate 2 involves small-balance write-offs (unrelated to contractual pricing), and Candidate 3 involves missing charge entries (unrelated). Cross-encoder score for Candidate 1 (0.013) confirms strong contextual alignment.",
+      "elapsed_s": 40.02704319998156
+    },
+    {
+      "key": "a5_endoscopy_status",
+      "category": "uncategorized",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A5"
+      ],
+      "actual_ticket_key": "A5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.9,
+      "explanation": "The incoming email asks for status on an endoscopy authorization, which directly matches Candidate 1's context where Golden Gate GI Associates submitted a prior authorization request for an upper endoscopy (CPT 43239) and is seeking an update. The cross-encoder score (0.489) confirms strong alignment, while Candidates 2 and 3 involve unrelated topics (colonoscopy claim rejection and aged balances) with near-zero scores (0.000).",
+      "elapsed_s": 43.91927549999673
+    },
+    {
+      "key": "thankyou_e7_resolved",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E7"
+      ],
+      "actual_ticket_key": "E7",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.9,
+      "explanation": "Incoming email expresses gratitude for quickly resolving a coverage issue, directly matching Candidate 1's context where the customer thanked the agent for resolving coverage verification and avoiding rescheduling. The cross-encoder score (0.062) is the highest among candidates, and the sentiment of timely coverage resolution aligns perfectly with the customer's language in the ticket.",
+      "elapsed_s": 60.28938259999268
+    },
+    {
+      "key": "thankyou_pm3_resolved",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM3"
+      ],
+      "actual_ticket_key": "PM3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "Incoming email explicitly references 'bundling adjustment on that facet injection payment' which directly matches Candidate 1's resolved ticket context where the agent clarified a bundling adjustment causing payment shortness. The cross-encoder score (0.937) and exact phrasing confirm this is the same underlying issue.",
+      "elapsed_s": 54.38656259997515
+    },
+    {
+      "key": "thankyou_c2_closed",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C2"
+      ],
+      "actual_ticket_key": "C2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.9,
+      "explanation": "The incoming email explicitly references the NPI issue fix and confirms the resubmission went through, directly matching Candidate 1's resolved ticket (where the customer was previously rejected due to invalid NPI and the resubmission was accepted). The cross-encoder score (0.067) is non-zero and higher than the others (0.000), confirming this is the genuine underlying issue. The email is a natural follow-up thank you for the completed fix in this specific ticket.",
+      "elapsed_s": 45.391191000002436
+    },
+    {
+      "key": "thankyou_r3_ar_resolved",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "R3"
+      ],
+      "actual_ticket_key": "R3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.99,
+      "explanation": "Incoming email explicitly thanks for write-off processing, matching Candidate 1's resolved small-balance write-off request (\"pushing that write-off through\"). Other tickets involve duplicate payments (Candidate 2) and missing charges (Candidate 3), which are unrelated to the write-off context.",
+      "elapsed_s": 40.64353299996583
+    },
+    {
+      "key": "thankyou_g3_chargeentry_resolved",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G3"
+      ],
+      "actual_ticket_key": "G3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "Incoming email explicitly thanks for fixing unit errors on PT charge, matching candidate 1's resolved issue of incorrect units causing overbilling (patient W. Sato's PT charge corrected from 4 to 2 units). Cross-encoder score (0.024) is highest among candidates and context aligns perfectly with the fix described.",
+      "elapsed_s": 59.19209829997271
+    },
+    {
+      "key": "thankyou_a4_priorauth_resolved",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A4"
+      ],
+      "actual_ticket_key": "A4",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "Incoming email explicitly thanks for expediting the referral authorization and confirms the appointment went ahead as planned, directly matching the resolved ticket 1's context where the expedited prior auth was approved and the appointment proceeded. Cross-encoder score (0.045) confirms relevance, while candidate 2 and 3 involve unrelated payment/account and insurance issues.",
+      "elapsed_s": 45.65954810002586
+    },
+    {
+      "key": "thankyou_e2_closed_valley",
+      "category": "thank_you_appreciation",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E2"
+      ],
+      "actual_ticket_key": "E2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.7,
+      "explanation": "The email expresses gratitude for resolving a coverage issue, which directly aligns with Candidate 1's closed ticket where coverage termination was handled by billing the patient directly (as confirmed by the customer). The cross-encoder score (0.001) is the highest among candidates, and the resolution context matches the thank-you message. Candidate 2 is open and unrelated, while Candidate 3 involves a prior auth appeal (less specific to the email's phrasing).",
+      "elapsed_s": 75.28079270001035
+    },
+    {
+      "key": "thankyou_ambiguous_lowcontent",
+      "category": "thank_you_appreciation",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "A1",
+        "R4"
+      ],
+      "actual_ticket_key": null,
+      "correct": false,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.0,
+      "explanation": "The incoming email is a generic thank you note ('Thanks Thanks so much, appreciate it!') with no specific reference to the underlying issues in any candidate tickets. The cross-encoder score of 0.000 for all candidates indicates no meaningful connection to the existing tickets. While thank you notes are common after ticket resolution, the email lacks context to determine which specific ticket it relates to (e.g., it doesn't mention the charge correction in Candidate 1, the AR balance in Candidate 2, or the NPI issue in Candidate 3). Without additional details, it cannot be confidently attached to any candidate without forcing a match. The instructions require not forcing a match, so this email should not be attached to any existing ticket.",
+      "elapsed_s": 89.48369090002961
+    },
+    {
+      "key": "info_c5_claims_resolved",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C5"
+      ],
+      "actual_ticket_key": "C5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.85,
+      "explanation": "The incoming email describes adjusting an EMG claim balance as a contractual write-off (not appealable), which directly matches Candidate 1's resolved ticket about a claim denial that was a contractual adjustment (CO-45). Both involve Summit Neurology Associates, the customer taking action to post the write-off after confirmation, and the EMG claim context aligns with the 95886 code referenced in Candidate 1. The cross-encoder score (0.122) is significantly higher than the others (0.000), and the underlying issue (contractual write-off vs. appealable denial) is consistent. Candidate 2 and 3 involve different issues (ERA payment discrepancies and coverage verification), so they are not relevant.",
+      "elapsed_s": 48.21152820001589
+    },
+    {
+      "key": "info_p2_payment_discrepancy",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "P2"
+      ],
+      "actual_ticket_key": "P2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.696,
+      "explanation": "The incoming email explicitly updates on the ERA discrepancy ($60 gap) that was previously flagged in Candidate 1's ticket (subject: ERA not matching expected payment amount). The customer states the gap is likely an interest payment, directly aligning with the agent's investigation in Candidate 1 (who was checking for interest payments or overpayment recoupment). The cross-encoder score of 0.696 confirms a strong match, while Candidate 2 (aging AR) and Candidate 3 (secondary insurance) are unrelated topics.",
+      "elapsed_s": 47.67532849998679
+    },
+    {
+      "key": "info_a3_priorauth_selfresolved",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A3"
+      ],
+      "actual_ticket_key": "A3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 1.0,
+      "explanation": "The incoming email explicitly states that the customer found the auth number on their own records (buried in a fax) and provides the auth number (4471-B). This directly resolves the core issue in Candidate 1: the customer previously forgot to include the auth number on the claim submission (as they confirmed they had an approved auth but missed it). The other candidates involve coverage termination (Candidate 2) and timely filing limits (Candidate 3), which are unrelated to auth number resolution.",
+      "elapsed_s": 26.763557100028265
+    },
+    {
+      "key": "info_r1_ar_update",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "R1"
+      ],
+      "actual_ticket_key": "R1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "The incoming email directly updates the Blue Cross aging bucket (120+ days) mentioned in Candidate 1's ticket, where the customer originally flagged $14,300 across 22 accounts. The email confirms three accounts were paid last week, which aligns with the ongoing follow-up campaign the agent started for this bucket. Candidate 2 (ERA discrepancy) and Candidate 3 (secondary insurance) are unrelated to aging reports or Blue Cross payments. The high cross-encoder score (0.762) for Candidate 1 and contextual match confirm this is the same underlying issue.",
+      "elapsed_s": 51.94328609999502
+    },
+    {
+      "key": "info_g4_chargeentry_selffixed",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G4"
+      ],
+      "actual_ticket_key": "G4",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.068,
+      "explanation": "Incoming email explicitly references catching a duplicate echo charge, which directly matches Candidate 1's subject and context about duplicate echo procedure charges (e.g., 'two identical charge lines for the same echo procedure'). The cross-encoder score of 0.068 confirms this is the only candidate with relevant context, while Candidates 2 and 3 address unrelated issues (modifier 25 claims and eligibility verification).",
+      "elapsed_s": 66.19478819996584
+    },
+    {
+      "key": "info_e3_eligibility_selfupdated",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E3"
+      ],
+      "actual_ticket_key": "E3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "The incoming email explicitly states that the customer updated their own system to correct the insurance on file to the new plan (Cigna) to ensure records match going forward. This directly addresses the core issue in Candidate 1 (wrong insurance plan causing claim rejection), where the customer previously reported a claim rejection due to outdated United insurance. The email confirms the fix the agent implemented in Candidate 1 (updating to Cigna), making it a natural follow-up to that ticket. Candidate 2 (payment error) and Candidate 3 (prior auth) are unrelated to insurance corrections. The cross-encoder score for Candidate 1 (0.003) is the only non-zero score and aligns with the email's context.",
+      "elapsed_s": 34.80360220000148
+    },
+    {
+      "key": "info_c7_claims_closed",
+      "category": "informational_email",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C7"
+      ],
+      "actual_ticket_key": "C7",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.85,
+      "explanation": "The incoming email explicitly details the root cause of the place-of-service code error (scheduling system had wrong site flagged) that led to the claim rejection in Candidate 1's ticket (Claim #71204 for patient T. Nguyen). This directly matches the ticket's subject and context, where the initial issue was an incorrect POS code (11 vs. 24) for a surgery center procedure. The email confirms the fix has been implemented in the scheduling system to prevent recurrence, aligning with the ticket's resolution (claim corrected and resubmitted). The cross-encoder score (0.252) is significantly higher than the others (0.000), and there's no indication this is a different issue (e.g., Candidate 2 is about unit counts, Candidate 3 is about AR aging).",
+      "elapsed_s": 49.36122419999447
+    },
+    {
+      "key": "info_ambiguous_archive_boundary",
+      "category": "informational_email",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "E1",
+        "A2"
+      ],
+      "actual_ticket_key": "C3",
+      "correct": false,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.8,
+      "explanation": "The incoming email indicates the customer believes the issue is resolved with no further action needed. In Candidate 2, the customer previously asked for updates on resubmissions after the agent added the modifier (as seen in the last customer interaction: 'Appreciate it - any update on the resubmissions?'). The email now confirms the issue is handled, directly matching the customer's closure message. Candidate 1 and 3 do not fit: Candidate 1 involves ongoing work (agent starting new auth) with no resolution signal, and Candidate 3 has an unresolved eligibility issue requiring further data. The cross-encoder score of 0.000 is low but the context shows a clear resolution path for Candidate 2.",
+      "elapsed_s": 68.35685589996865
+    },
+    {
+      "key": "broken_headers_gt_quote",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C3"
+      ],
+      "actual_ticket_key": "C3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.987,
+      "explanation": "The incoming email directly references the same subject ('Multiple claims denied for missing modifier 25') and the customer is asking about resubmission timing, matching the last customer message in Candidate 1 (requesting update on resubmissions). The cross-encoder score of 0.987 confirms high similarity, while Candidate 2 and 3 have 0.000 scores indicating unrelated issues.",
+      "elapsed_s": 54.41357060003793
+    },
+    {
+      "key": "broken_headers_on_wrote",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "P1"
+      ],
+      "actual_ticket_key": "P1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.999,
+      "explanation": "Incoming email directly follows up on the resolved payment issue for M. Delgado's account (ticket 1), specifically asking about balance reflection by next statement cycle. The cross-encoder score of 0.999 confirms this is the same underlying issue as candidate ticket 1, where the payment was corrected to M. Delgado's account. Candidate tickets 2 and 3 are unrelated (insurance plan and prior auth), so no match there.",
+      "elapsed_s": 52.3302732000011
+    },
+    {
+      "key": "broken_headers_original_message",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "R2"
+      ],
+      "actual_ticket_key": "R2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 1.0,
+      "explanation": "The incoming email directly addresses the same patient balance dispute after insurance adjustment issue as in Candidate 1 (subject matches exactly, and the customer is checking EOB verification against patient responsibility - aligning with the agent's confirmation that the payer adjudicated $180 but the patient's insurance rep may have quoted from a different EOB). The cross-encoder score of 1.000 confirms this is a perfect match for the underlying issue, while Candidates 2 and 3 involve unrelated topics (check posting and CPT codes).",
+      "elapsed_s": 49.697458899987396
+    },
+    {
+      "key": "broken_headers_forwarded",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E4"
+      ],
+      "actual_ticket_key": "E4",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.98,
+      "explanation": "Matches Candidate 1: secondary claim submitted and accepted (payment pending) for patient R. Okafor, directly aligning with the follow-up question about payment status.",
+      "elapsed_s": 48.57601540000178
+    },
+    {
+      "key": "broken_headers_pasted_block",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G7"
+      ],
+      "actual_ticket_key": "G7",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.997,
+      "explanation": "Incoming email has identical subject line and context as Candidate 1 (CPT code clarification for eye exam), with customer sending the note for review. Cross-encoder score of 0.997 confirms strong match; other candidates involve different issues (retina procedure appeals and cataract surgery denials).",
+      "elapsed_s": 49.731789999990724
+    },
+    {
+      "key": "broken_headers_html_blockquote",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G2"
+      ],
+      "actual_ticket_key": "G2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.908,
+      "explanation": "The incoming email directly addresses the missing charge entry for date 06/14 (matching candidate 1's subject) and provides the specific CPT 99213 and diagnosis M54.5 codes that the agent in candidate 1's ticket explicitly requested for manual entry. This is a clear continuation of the same issue where the customer is confirming the codes needed to resolve the missing charge. Candidate 2 and 3 have unrelated subjects (claim denial for CO-45 and duplicate payments) and different dates/codes, so they do not match.",
+      "elapsed_s": 50.19129829999292
+    },
+    {
+      "key": "broken_headers_early_quote_boundary",
+      "category": "broken_thread_headers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C3"
+      ],
+      "actual_ticket_key": "C3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.999,
+      "explanation": "The incoming email's quoted agent message ('Reviewing all three now. You're right that the E/M codes need modifier 25') matches the agent's response in Candidate 1 exactly, and the customer (Metro Cardiology Partners) and subject ('Multiple claims denied for missing modifier 25') are consistent with the ticket context.",
+      "elapsed_s": 55.8366948000039
+    },
+    {
+      "key": "broken_headers_terse_after_strip",
+      "category": "broken_thread_headers",
+      "difficulty": "hard",
+      "ambiguity_type": "single_answer",
+      "expected_ticket_keys": [
+        "P5"
+      ],
+      "actual_ticket_key": "P5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.997,
+      "explanation": "The incoming email directly responds to the active ticket (ID: 8fb4ae3f-e710-509d-b161-e3d278feaa39) about ERA payment discrepancies for Summit Neurology Associates, with identical subject line and customer. The cross-encoder score of 0.997 confirms high similarity to Candidate 1's context (customer flagged ERA payment mismatch for CPT 99215), while Candidates 2 and 3 address unrelated topics (coverage verification and claim denials). The email's content ('Sounds good, thanks for looking into it') matches the ongoing conversation where the customer was previously seeking clarification on payment discrepancies.",
+      "elapsed_s": 48.15943890000926
+    },
+    {
+      "key": "archive_c4_claims_selfresolved",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "C4"
+      ],
+      "actual_ticket_key": "A3",
+      "correct": false,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "Incoming email confirms payer agreement to reprocess and closure, directly matching Candidate 1's resolution where claim #90112 was reprocessed and paid. Cross-encoder score (0.543) is significantly higher than others (0.007/0.003), and context aligns with the appeal resolution process described in the ticket.",
+      "elapsed_s": 66.86783080000896
+    },
+    {
+      "key": "archive_e5_eligibility_rescheduled",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E5"
+      ],
+      "actual_ticket_key": "E5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.85,
+      "explanation": "The incoming email explicitly updates that a walk-in patient has rescheduled, resolving the eligibility verification issue that was the core subject of Candidate 1's ticket (which involved a walk-in patient unable to verify eligibility through the payer portal). This directly matches the context of the ticket's interactions, where the patient was waiting for verification. Candidate 2 and 3 are resolved tickets about bundling issues with E/M visits and do not relate to eligibility verification or walk-in patient updates.",
+      "elapsed_s": 78.56207699998049
+    },
+    {
+      "key": "archive_g1_chargeentry_noaction",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G1"
+      ],
+      "actual_ticket_key": "G1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "The incoming email directly resolves the CPT code issue from candidate 1 (original code 90837 vs. documentation supporting 45 minutes) by confirming the documentation actually supports 60 minutes, so no correction is needed. This matches the exact context of the ticket's open issue and the customer's follow-up on the same visit (patient B. Tran on 7/24). Candidate 2 and 3 are unrelated topics (balance disputes and check posting), and the cross-encoder score (0.407) aligns with the strong contextual match.",
+      "elapsed_s": 54.48475469998084
+    },
+    {
+      "key": "archive_p3_payment_noaction",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "P3"
+      ],
+      "actual_ticket_key": "P3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "Incoming email explicitly confirms the Aetna check has been posted in the system, directly resolving the issue raised in Candidate 1 (check received but not posted). The cross-encoder score (0.222) is significantly higher than others (0.000), and the email's content matches the ticket's subject and customer's original concern about the Aetna check not reflecting as posted.",
+      "elapsed_s": 30.651370499981567
+    },
+    {
+      "key": "archive_p4_payment_notduplicate",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "P4"
+      ],
+      "actual_ticket_key": "P4",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "The incoming email directly addresses the duplicate payment issue raised in Candidate 1 (claim #48213) by confirming it was two separate visits, not a duplicate. This matches the subject, customer, and context of Candidate 1 (Riverside Family Medicine) while resolving the initial concern with no action needed. Candidate 2 and 3 are unrelated (missing charge vs. claim denial). The cross-encoder score (0.411) aligns with this specific resolution.",
+      "elapsed_s": 43.00059409998357
+    },
+    {
+      "key": "archive_r4_ar_noaction",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "R4"
+      ],
+      "actual_ticket_key": "R4",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.917,
+      "explanation": "The email explicitly updates the status of the early June Cigna batch claims (the core subject of Candidate 1's pending ticket), confirming that three claims have been paid and resolving the outstanding balance issue. This directly matches the customer's initial concern in the ticket about Cigna not paying the June batch ($6,800 outstanding). The cross-encoder score of 0.917 reflects strong contextual alignment, while Candidates 2 and 3 address unrelated issues (NPI rejection and unit overbilling).",
+      "elapsed_s": 57.95697419997305
+    },
+    {
+      "key": "archive_a2_priorauth_deprioritize",
+      "category": "archive_no_action",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A2"
+      ],
+      "actual_ticket_key": "A2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.9,
+      "explanation": "The incoming email explicitly references 'cath auth' (cardiac catheterization authorization) and provides an update on the procedure cancellation for Metro Cardiology Partners, directly aligning with candidate ticket 1's subject (prior auth expired before procedure date) and context. The customer states they don't need to submit a new auth because the procedure was cancelled (vs. candidate ticket 1's rescheduled procedure), which is a natural update on the same authorization process the agent was working on. Cross-encoder score (0.098) confirms strong relevance versus the near-zero scores for candidates 2 and 3 (duplicate charges and modifier issues).",
+      "elapsed_s": 50.2608484000084
+    },
+    {
+      "key": "archive_ambiguous_lakeside",
+      "category": "archive_no_action",
+      "difficulty": "hard",
+      "ambiguity_type": "multi_acceptable",
+      "expected_ticket_keys": [
+        "A4",
+        "P1"
+      ],
+      "actual_ticket_key": null,
+      "correct": false,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.0,
+      "explanation": "The incoming email is a generic closure message ('All set... everything's fine on our end now - no action needed') that does not specify which resolved issue it refers to. While both Candidate 1 (RESOLVED) and Candidate 3 (RESOLVED) are resolved tickets where the customer could send such a message, the email lacks context to determine which specific ticket it belongs to. The cross-encoder scores are all 0.000, indicating no meaningful similarity to the candidate tickets. Given the requirement to not force a match and the absence of specific details in the email, it cannot be confidently attached to any candidate. The underlying issue of the email is too generic to align with one specific ticket's context.",
+      "elapsed_s": 84.51047440001275
+    },
+    {
+      "key": "crosscust_a1_pm4_mri",
+      "category": "cross_customer_similarity",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A1"
+      ],
+      "actual_ticket_key": "A1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.97,
+      "explanation": "The incoming email directly addresses the same issue as Candidate 1: knee MRI prior auth denial due to insufficient conservative treatment documentation, with the customer asking about the appeal process. This matches the ticket's subject, customer, and interaction history exactly (e.g., denial reason 'insufficient conservative treatment documentation' and request for appeal steps). The cross-encoder score of 0.971 confirms strong thematic alignment, while Candidates 2 and 3 are unrelated topics (overbilling units and AR balances).",
+      "elapsed_s": 47.87225549999857
+    },
+    {
+      "key": "crosscust_e1_pm5_eligibility",
+      "category": "cross_customer_similarity",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "E1"
+      ],
+      "actual_ticket_key": "E1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.995,
+      "explanation": "Incoming email describes D. Marsh's eligibility verification still showing 'not found' on portal, matching candidate 1's exact issue (new patient eligibility check failing) and context.",
+      "elapsed_s": 60.597207899962086
+    },
+    {
+      "key": "crosscust_p2_p5_era",
+      "category": "cross_customer_similarity",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "P2"
+      ],
+      "actual_ticket_key": "P2",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.999,
+      "explanation": "Incoming email explicitly references the ERA discrepancy from batch 06/20 with a $60 difference, matching the customer's initial complaint in candidate 1 ticket (\"ERA we received for batch 06/20 shows $1,240 but line items total $1,180 with $60 discrepancy\"). The cross-encoder score of 0.999 confirms high relevance, while candidate 2 (aging AR) and candidate 3 (secondary insurance) are unrelated issues.",
+      "elapsed_s": 50.99232020002091
+    },
+    {
+      "key": "pm1_explicit_claim",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM1"
+      ],
+      "actual_ticket_key": "PM1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "Incoming email specifically references claim #93021 and asks for resubmission update, directly matching candidate 1's context where the customer was denied claim #93021 and requested resubmission with correct prior authorization. Candidate 2 and 3 lack claim #93021 in their context and address different issues (batch aging claims vs. CPT code correction). Cross-encoder score of 0.884 for candidate 1 confirms strong contextual alignment.",
+      "elapsed_s": 88.97001510002883
+    },
+    {
+      "key": "a3_explicit_claim",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "A3"
+      ],
+      "actual_ticket_key": "A3",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.99,
+      "explanation": "Email specifically references claim #90112 and asks about authorization number addition, directly matching candidate 1's initial issue (missing prior auth number for claim #90112). Cross-encoder score of 0.999 confirms strong relevance, while candidate 2 and 3 involve different claim numbers and issues.",
+      "elapsed_s": 61.661937800003216
+    },
+    {
+      "key": "p5_explicit_claim",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "P5"
+      ],
+      "actual_ticket_key": "P5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.95,
+      "explanation": "The incoming email explicitly references claim #59042 and asks about reprocessing confirmation. Candidate 1's interactions directly mention claim #59042 (for patient M. Castellano's visit, CPT 99215) and the agent has already initiated reprocessing (submitting a corrected claim/reconsideration request). The customer's follow-up on reprocessing matches the context of Candidate 1's active resolution. Candidate 2 and 3 do not reference claim #59042 in their interactions, and their cross-encoder scores are 0.000 (indicating no relevance). The high cross-encoder score (0.773) for Candidate 1 further supports this match.",
+      "elapsed_s": 46.942319299967494
+    },
+    {
+      "key": "r1_explicit_aging_bucket",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "R1"
+      ],
+      "actual_ticket_key": "R1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.998,
+      "explanation": "The incoming email directly follows up on the $14,300 Blue Cross aging bucket (120+ days) with 22 accounts, matching Candidate 1's customer interaction that described the same issue and requested action on the bucket. The cross-encoder score of 0.998 confirms high similarity, while Candidates 2 and 3 address unrelated topics (secondary insurance verification and ERA discrepancies).",
+      "elapsed_s": 76.52306279999902
+    },
+    {
+      "key": "pm5_explicit_patient_context",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "PM5"
+      ],
+      "actual_ticket_key": "PM5",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 0.999,
+      "explanation": "Incoming email explicitly references A. Reyes' eligibility issue with 'plan not found' on the portal, matching Candidate 1's subject and customer interaction (same patient, identical problem). Candidate 2 and 3 involve different patients and unrelated issues (prior auth for spinal cord stimulator trial and claims aging). Cross-encoder score of 0.999 confirms high relevance without forcing a match.",
+      "elapsed_s": 54.60076300002402
+    },
+    {
+      "key": "g1_explicit_charge_detail",
+      "category": "explicit_business_identifiers",
+      "difficulty": "clear",
+      "ambiguity_type": null,
+      "expected_ticket_keys": [
+        "G1"
+      ],
+      "actual_ticket_key": "G1",
+      "correct": true,
+      "recall20": true,
+      "recall3": true,
+      "path": "ai_decision",
+      "confidence": 1.0,
+      "explanation": "Incoming email directly follows up on the CPT correction for B. Tran's 7/24 visit (90837 to 90834) as explicitly raised in Candidate 1's open ticket. The cross-encoder score of 1.000 confirms a perfect match for the same patient, date, and CPT code issue.",
+      "elapsed_s": 58.68343660002574
+    }
+  ]
+}

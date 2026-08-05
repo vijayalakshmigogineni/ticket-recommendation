@@ -2,18 +2,58 @@ import enum
 
 
 class TicketCategory(str, enum.Enum):
-    CLAIM_DENIAL = "claim_denial"
-    PRIOR_AUTH = "prior_auth"
+    """Which operational team owns this ticket (broad).
+
+    Values are our own readable vocabulary, not the production system's
+    exact strings -- see PRODUCTION_CATEGORY_LABEL below for the translation
+    layer, used only at an eventual integration boundary, never scattered
+    through generation code. No IssueType sub-classification: confirmed the
+    real production ticketing system has no such concept, category is the
+    only classification axis on a ticket.
+
+    No PATIENT_CALLING value: confirmed with the user this category is
+    slated for removal from production too (not just irrelevant to an
+    email-driven benchmark) -- not modeled here at all.
+    """
+
+    CLAIMS = "claims"
     PAYMENT_POSTING = "payment_posting"
-    DOCUMENTATION_REQUEST = "documentation_request"
-    INSURANCE_VERIFICATION = "insurance_verification"
-    NEW_SERVICE_REQUEST = "new_service_request"
-    GENERAL_ENQUIRY = "general_enquiry"
+    PRIOR_AUTHORIZATION = "prior_authorization"
+    ACCOUNTS_RECEIVABLE = "accounts_receivable"
+    ELIGIBILITY = "eligibility"
+    CHARGE_ENTRY = "charge_entry"
+
+
+# Translation layer only -- maps our readable category vocabulary to the
+# real production system's exact CategoryName strings. Used only if/when
+# integrating with real data; never referenced during generation itself.
+PRODUCTION_CATEGORY_LABEL: dict[TicketCategory, str] = {
+    TicketCategory.CLAIMS: "Claims",
+    TicketCategory.PAYMENT_POSTING: "Payment Posting",
+    TicketCategory.PRIOR_AUTHORIZATION: "PA",
+    TicketCategory.ACCOUNTS_RECEIVABLE: "AR",
+    TicketCategory.ELIGIBILITY: "Eligibility",
+    TicketCategory.CHARGE_ENTRY: "Charge Entry",
+}
 
 
 class TicketStatus(str, enum.Enum):
-    OPEN = "open"
-    CLOSED = "closed"
+    """Matches the real production system's 6 states exactly, not just
+    OPEN/CLOSED. The retrieval pipeline's "open ticket" scope means
+    non-terminal status (see TERMINAL_TICKET_STATUSES below) -- not
+    literally status == OPEN, which would wrongly exclude IN_PROGRESS/
+    PENDING/WAITING_FOR_CLIENT tickets that are still live and re-matchable.
+    """
+
+    OPEN = "OPEN"
+    IN_PROGRESS = "IN_PROGRESS"
+    PENDING = "PENDING"
+    WAITING_FOR_CLIENT = "WAITING_FOR_CLIENT"
+    RESOLVED = "RESOLVED"
+    CLOSED = "CLOSED"
+
+
+TERMINAL_TICKET_STATUSES = frozenset({TicketStatus.RESOLVED, TicketStatus.CLOSED})
 
 
 class SenderType(str, enum.Enum):
